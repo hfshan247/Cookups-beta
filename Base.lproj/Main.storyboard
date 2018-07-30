@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -183,8 +183,18 @@
                                             <constraint firstItem="UrC-m7-1Ik" firstAttribute="leading" secondItem="9YP-J8-8iA" secondAttribute="leading" constant="5" id="w9X-U9-lh1"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="UI_ImageRatings1" destination="l3e-Ql-aXP" id="BmS-Cz-HC4"/>
+                                            <outlet property="UI_ImageRatings2" destination="bX8-oK-481" id="R2Q-Vd-FV3"/>
+                                            <outlet property="UI_ImageRatings3" destination="4Xa-gS-Xs0" id="1WS-ly-Szc"/>
+                                            <outlet property="UI_ImageRatings4" destination="BAI-Nl-T8O" id="R3M-Gm-A1F"/>
+                                            <outlet property="UI_ImageRatings5" destination="EkA-Bb-ecc" id="cbM-6f-kBu"/>
+                                            <outlet property="UI_ImageUserProfilAvatar" destination="UrC-m7-1Ik" id="pdS-r1-nkE"/>
                                             <outlet property="UI_ItemImage" destination="Y98-at-mid" id="keZ-ni-3QN"/>
                                             <outlet property="UI_ItemTitle" destination="sYV-mR-RSB" id="zSq-ZB-Z1z"/>
+                                            <outlet property="UI_LabelDay" destination="LLO-01-6nw" id="hcM-zW-nuc"/>
+                                            <outlet property="UI_LabelLocation" destination="hUU-RP-9dZ" id="jta-Ka-Jfa"/>
+                                            <outlet property="UI_LabelPrice" destination="hcU-RY-NeI" id="jsM-EV-30Z"/>
+                                            <outlet property="UI_LabelUserName" destination="9Zl-5e-5kv" id="bEc-sf-upa"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

@@ -10,6 +10,8 @@ import UIKit
 
 class BackupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+     var product: Product = Product()
+   
     
     @IBOutlet weak var UI_TableView: UITableView!
     
@@ -18,6 +20,9 @@ class BackupViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     private let Headerheight: CGFloat = 250
     private let Headercut : CGFloat = 0
+    
+    
+    
     
     let burgerTitles = [
         "Cheese Burger Burger",
@@ -174,34 +179,28 @@ class BackupViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if indexPath.row == 0 {
             let cell1 = tableView.dequeueReusableCell(withIdentifier: "Cell_1") as! FirstTableViewCell
             
-            cell1.UI_ItemTitle?.text    = "Chicken Cheese Burger"
-            cell1.UI_ItemDate?.text     = "Monday, May23 "
-            cell1.UI_ItemTimeSpam?.text = "11:00 AM - 5:00 PM"
-            cell1.UI_ItemLocation?.text = "Sector H-12 Islamabad"
-            cell1.UI_ItemRatings?.text  = "(30 - 50 Ratings)"
-            cell1.UI_ItemUserFullName.setTitle("Muhammad Hussain Farooq", for: .normal)
+            cell1.UI_ItemTitle?.text    = product.title
+            cell1.UI_ItemDate?.text     = product.date
+            cell1.UI_ItemTimeSpam?.text = product.time
+            cell1.UI_ItemLocation?.text = product.location
+            cell1.UI_ItemRatings?.text  = product.ratingsDescription
+            cell1.UI_ItemUserFullName.setTitle(product.userName, for: .normal)
             
             return cell1
         }
         else if indexPath.row == 1 {
             let cell2 = tableView.dequeueReusableCell(withIdentifier: "Cell_2") as! SecondTableViewCell
             
-            cell2.UI_ItemPortion?.text       = "1:1"
-            cell2.UI_ItemCategory?.text      = "Bangali"
-            cell2.UI_ItemUsersCapacity?.text = "20 Available"
+            cell2.UI_ItemPortion?.text       = product.portions
+            cell2.UI_ItemCategory?.text      = product.category
+            cell2.UI_ItemUsersCapacity?.text = product.remainings
             
             return cell2
         }
         else {
             let cell3: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell_3")
             
-            cell3.textLabel?.text = "Section 1.10.33 of de Finibus Bonorum; et Malorum written by Cicero in 45 BC. "
-            
-            + "\n \nAt vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident. \n \n similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio."
-            
-            + "\n \nNam libero tempore, cum soluta nobis est \n \n eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus."
-            
-            + "\n \nTemporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. \n\nItaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
+            cell3.textLabel?.text = product.description
             cell3.textLabel?.numberOfLines = 0
             return cell3
         }
@@ -225,6 +224,8 @@ class BackupViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func View_User_Profile(_ sender: UIButton) {
         let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let DesVC = mainStoryboard.instantiateViewController(withIdentifier: "sellerItemsProfileViewController") as! SellerItemsProfileViewController
+    
+        
         
         self.navigationController?.pushViewController(DesVC, animated: true)
     }

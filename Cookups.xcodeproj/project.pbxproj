@@ -44,6 +44,7 @@
 		761EC6B02106C38B008431B6 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761EC6AF2106C38B008431B6 /* PrivacyPolicyViewController.swift */; };
 		7683B4BD210B058D00F29111 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683B4BC210B058D00F29111 /* Product.swift */; };
 		7683B4C0210B078E00F29111 /* ProductsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683B4BF210B078E00F29111 /* ProductsController.swift */; };
+		76EC15BA210F215900624809 /* ProductServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EC15B9210F215900624809 /* ProductServer.swift */; };
 		76FCB637210B32D500404932 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCB636210B32D500404932 /* Filter.swift */; };
 		76FCB639210B342E00404932 /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCB638210B342E00404932 /* FilterController.swift */; };
 		76FCB63C210B3F6F00404932 /* FilterServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCB63B210B3F6F00404932 /* FilterServer.swift */; };
@@ -114,6 +115,7 @@
 		761EC6AF2106C38B008431B6 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		7683B4BC210B058D00F29111 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		7683B4BF210B078E00F29111 /* ProductsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsController.swift; sourceTree = "<group>"; };
+		76EC15B9210F215900624809 /* ProductServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductServer.swift; sourceTree = "<group>"; };
 		76FCB636210B32D500404932 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		76FCB638210B342E00404932 /* FilterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterController.swift; sourceTree = "<group>"; };
 		76FCB63B210B3F6F00404932 /* FilterServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterServer.swift; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				76FCB63B210B3F6F00404932 /* FilterServer.swift */,
+				76EC15B9210F215900624809 /* ProductServer.swift */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 			files = (
 				760960BB21045BD5002EDC00 /* FirstTableViewCell.swift in Sources */,
 				760F735321041EE600983C7B /* ViewController.swift in Sources */,
+				76EC15BA210F215900624809 /* ProductServer.swift in Sources */,
 				761EC69A21068148008431B6 /* PlaceOrderViewController.swift in Sources */,
 				76020B2921024F5C0016B508 /* ItemsViewController.swift in Sources */,
 				760650592105AA0C00CA9B03 /* TempTableViewController.swift in Sources */,

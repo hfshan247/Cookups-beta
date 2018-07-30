@@ -12,11 +12,10 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
 
     var pageViewController :UIPageViewController?
  
-    let contentImages = [
-        "BaconCheese",
-        "CreoleCrab",
-        "CaramelizedOnion",
-        "JuicyLucy",
+    var contentImages: [UIImage] = [
+        UIImage(named:"BaconCheese")!,
+        UIImage(named: "CreoleCrab")!,
+        UIImage(named: "CaramelizedOnion")!,
         ]
     
     

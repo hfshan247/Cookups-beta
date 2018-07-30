@@ -7,27 +7,38 @@
 //
 
 import Foundation
-struct Product: Decodable{
+import UIKit
+
+struct Product{
     
     let id:          Int?
     let title:       String?
-    let user:        String?
+    let userName:    String?
+    let userPhoto:   UIImage?
     let time:        String?
     let date:        String?
     let location:    String?
     let ratings:     String?
+    let stars:       [UIImage]?
     let price:       String?
-    let images:      String?
+    let images:      [UIImage]?
     let portions:    String?
     let category:    String?
     let remainings:  String?
     let likedByYou:  Bool?
     let description: String?
+    let ratingsDescription: String?
     
-    init(id: Int = 0,title: String? = "User name",user: String? = "Temp String", time: String? = "Temp String", date: String? = "Temp String", location: String? = "Temp String", ratings: String? = "Temp String", price: String? = "Temp String", images: String? = "Temp String", portions: String? = "Temp String", category: String? = "Temp String", remainings: String? = "Temp String", likedByYou: Bool? = false, description: String? = "Temp String") {
+    init(id: Int = 0,title: String? = "User name",userName: String? = "Temp String", userPhoto: UIImage? = UIImage(named: "profile"), time: String? = "Temp String", date: String? = "Temp String", location: String? = "Temp String", ratings: String? = "Temp String",
+         
+         stars: [UIImage] = [UIImage(named: "star_1")!, UIImage(named: "star_1")!,UIImage(named: "star_1")!,UIImage(named: "star_1")!, UIImage(named: "star_1")!],
+         
+         price: String? = "Temp String", images: [UIImage]? = [UIImage(named: "CheeseBurger")!, UIImage(named: "CheeseBurger")!], portions: String? = "Temp String", category: String? = "Temp String", remainings: String? = "Temp String", likedByYou: Bool? = false, description: String? = "Temp String", ratingsDescription: String? = "Temp Ratings") {
+        
         self.id          = id
         self.title       = title
-        self.user        = user
+        self.userName    = userName
+        self.userPhoto   = userPhoto
         self.time        = time
         self.date        = date
         self.location    = location
@@ -39,6 +50,7 @@ struct Product: Decodable{
         self.remainings  = remainings
         self.likedByYou  = likedByYou
         self.description = description
-        
+        self.ratingsDescription = ratingsDescription
+        self.stars       = stars
     }
 }

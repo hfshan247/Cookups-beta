@@ -9,7 +9,8 @@
 import UIKit
 
 class FirstViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-
+    
+    var filtersArray = [Filter]()
     
 //    let filterTitlesArray = ["Drink",
 //                             "Fish Food",
@@ -30,7 +31,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     
     @IBOutlet weak var collectionView: UICollectionView!
-    var filtersArray = [Filter]()
+    
     
     
     override func viewDidLoad() {
@@ -103,10 +104,9 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         if let filter = filtersArray[indexPath.item] as? Filter{
             
-            filterCell.UI_FilterTitle.text = filter.title
-            filterCell.UI_FilterTitle.textColor = filter.textColor
-            
-            filterCell.UI_FilterImage.image = filter.icon
+            filterCell.UI_FilterTitle.text            = filter.title
+            filterCell.UI_FilterTitle.textColor       = filter.textColor
+            filterCell.UI_FilterImage.image           = filter.icon
             filterCell.UI_FilterImage.backgroundColor = filter.backgroundColor
             
         }

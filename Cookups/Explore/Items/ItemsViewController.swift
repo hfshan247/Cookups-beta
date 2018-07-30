@@ -10,6 +10,7 @@ import UIKit
 
 class ItemsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource  {
     
+    var productsArray = [Product]()
     
     @IBOutlet weak var UI_ItemsCollectionView: UICollectionView!
     
@@ -65,7 +66,7 @@ class ItemsViewController: UIViewController, UICollectionViewDelegate, UICollect
         UI_ItemsCollectionView.dataSource = self
         UI_ItemsCollectionView.delegate = self
         
-          
+        productsArray = ProductsController.getProducts()
     }
 
     override func didReceiveMemoryWarning() {
@@ -82,17 +83,36 @@ class ItemsViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         let itemCell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemsCollectionViewCell", for: indexPath) as! ItemsCollectionViewCell
         
-        itemCell.layer.borderColor = UIColor.gray.cgColor
-        itemCell.layer.borderWidth = 0.5
-        itemCell.layer.cornerRadius = 4
+        
+        if let product = productsArray[indexPath.item] as? Product{
+            
+            itemCell.UI_ItemImage.image             = product.images?[0]
+            itemCell.UI_ItemTitle.text              = product.title
+            itemCell.UI_LabelUserName.text          = product.userName
+            itemCell.UI_ImageUserProfilAvatar.image = product.userPhoto
+            itemCell.UI_LabelDay.text               = product.date
+            itemCell.UI_LabelPrice.text             = product.price
+            itemCell.UI_LabelLocation.text          = product.location
+            
+            itemCell.UI_ImageRatings1.image         = product.stars?[0]
+            itemCell.UI_ImageRatings2.image         = product.stars?[1]
+            itemCell.UI_ImageRatings3.image         = product.stars?[2]
+            itemCell.UI_ImageRatings4.image         = product.stars?[3]
+            itemCell.UI_ImageRatings5.image         = product.stars?[4]
+            
+        }
         
         
-        itemCell.UI_ItemImage.image = burgerNames[indexPath.item]
+        
+        
+        
+        // Styling the product
         itemCell.UI_ItemImage.layer.borderWidth = 0.05
         itemCell.UI_ItemImage.layer.cornerRadius = 4
         
-        itemCell.UI_ItemTitle.text  = burgerTitles[indexPath.item]
-        
+        itemCell.layer.borderColor = UIColor.gray.cgColor
+        itemCell.layer.borderWidth = 0.5
+        itemCell.layer.cornerRadius = 4
         
         return itemCell
     }
@@ -101,6 +121,10 @@ class ItemsViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let DesVC = mainStoryboard.instantiateViewController(withIdentifier: "backupViewController") as! BackupViewController
+        DesVC.product = productsArray[indexPath.row]
+        
+        let CarosalVC = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        CarosalVC.contentImages = productsArray[indexPath.row].images!
         
         self.navigationController?.pushViewController(DesVC, animated: true)
         

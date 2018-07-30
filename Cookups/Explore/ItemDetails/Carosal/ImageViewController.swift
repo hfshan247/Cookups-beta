@@ -12,15 +12,15 @@ class ImageViewController: UIViewController {
 
     
     var itemIndex: Int = 0
-    var imageName: String = "" {
-        didSet{
-            if let imageView = UI_ContentImageView{
-                imageView.image = UIImage(named: imageName)
-            }
-        }
-    }
+//    var imageName: String = "" {
+//        didSet{
+//            if let imageView = UI_ContentImageView{
+//                imageView.image = UIImage(named: imageName)
+//            }
+//        }
+//    }
     
-    
+    var imageName: UIImage = UIImage(named: "HolsinBurger")!
     
     @IBOutlet weak var UI_ContentImageView: UIImageView!
     
@@ -28,7 +28,7 @@ class ImageViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        UI_ContentImageView.image = UIImage(named: imageName)
+        UI_ContentImageView.image = imageName
     }
 
     override func didReceiveMemoryWarning() {
