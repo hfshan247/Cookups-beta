@@ -12,11 +12,13 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
 
     var pageViewController :UIPageViewController?
  
-    var contentImages: [UIImage] = [
-        UIImage(named:"BaconCheese")!,
-        UIImage(named: "CreoleCrab")!,
-        UIImage(named: "CaramelizedOnion")!,
-        ]
+//    var contentImages: [UIImage] = [
+//        UIImage(named:"BaconCheese")!,
+//        UIImage(named: "CreoleCrab")!,
+//        UIImage(named: "CaramelizedOnion")!,
+//        ]
+    
+    var contentImages = RuntimeApp.product.images
     
     
     override func viewDidLoad() {
@@ -40,7 +42,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
         
         pageController.dataSource = self
         
-        if contentImages.count > 0{
+        if (contentImages?.count)! > 0{
             let firstController = getItemController(itemIndex: 0)!
             let startingViewControllers = [firstController]
             
@@ -80,7 +82,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
         
         let itemController = viewController as! ImageViewController
         
-       if itemController.itemIndex + 1 < contentImages.count{
+        if itemController.itemIndex + 1 < (contentImages?.count)!{
             return getItemController(itemIndex: itemController.itemIndex + 1)
         }
         
@@ -89,7 +91,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     }
     
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        return contentImages.count
+        return contentImages!.count
     }
     
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
@@ -113,11 +115,11 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     }
    
     func getItemController(itemIndex: Int) -> ImageViewController?{
-        if itemIndex < contentImages.count{
+        if itemIndex < (contentImages?.count)!{
             let pageItemController = self.storyboard?.instantiateViewController(withIdentifier: "ImageController") as! ImageViewController
             
             pageItemController.itemIndex = itemIndex
-            pageItemController.imageName = contentImages[itemIndex]
+            pageItemController.imageName = contentImages![itemIndex]
             
             return pageItemController
             

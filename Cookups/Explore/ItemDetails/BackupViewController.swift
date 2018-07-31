@@ -14,6 +14,9 @@ class BackupViewController: UIViewController, UITableViewDelegate, UITableViewDa
    
     
     @IBOutlet weak var UI_TableView: UITableView!
+    @IBOutlet var UI_ImagesExplore: [UIView]!
+    @IBOutlet weak var UI_LabelPrice: UILabel!
+    @IBOutlet weak var UI_ImageLiked: UIBarButtonItem!
     
     var Headerview : UIView!
     var NewHeaderLayer : CAShapeLayer!
@@ -36,18 +39,6 @@ class BackupViewController: UIViewController, UITableViewDelegate, UITableViewDa
         "Creole Crab Burger",
         "Middle Eastern Burger",
         "Saltimbocca Burger",
-        
-        "Cheese Burger Burger",
-        "Bacon Cheese Burger",
-        "Caramelized Onion Burger",
-        "Juicy Lucy Burger",
-        "English Cheddar Burger",
-        "Holsin Burger Burger",
-        "Chipotle Corn Burger",
-        "Thai Pork Burger",
-        "Creole Crab Burger",
-        "Middle Eastern Burger",
-        "Saltimbocca Burger"
     ]
     
     override func viewDidLoad() {
@@ -80,7 +71,11 @@ class BackupViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let orderView: UIView =  OrderUIView()
         orderView.isHidden = true
         
+        //ViewController.contentImages = product.images!
         
+        // Preview Product:
+        UI_LabelPrice.text = product.price
+        UI_ImageLiked.image = product.liked
     }
     
     func UpdateView(){
@@ -166,7 +161,7 @@ class BackupViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
 
@@ -182,37 +177,59 @@ class BackupViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cell1.UI_ItemTitle?.text    = product.title
             cell1.UI_ItemDate?.text     = product.date
             cell1.UI_ItemTimeSpam?.text = product.time
-            cell1.UI_ItemLocation?.text = product.location
-            cell1.UI_ItemRatings?.text  = product.ratingsDescription
-            cell1.UI_ItemUserFullName.setTitle(product.userName, for: .normal)
+            
             
             return cell1
         }
         else if indexPath.row == 1 {
             let cell2 = tableView.dequeueReusableCell(withIdentifier: "Cell_2") as! SecondTableViewCell
             
-            cell2.UI_ItemPortion?.text       = product.portions
-            cell2.UI_ItemCategory?.text      = product.category
-            cell2.UI_ItemUsersCapacity?.text = product.remainings
+            cell2.UI_ItemLocation?.text = product.location
+            cell2.UI_ItemRatings?.text  = product.ratingsDescription
+            cell2.UI_ItemUserFullName.setTitle(product.userName, for: .normal)
+            
+            cell2.UI_ImageRatings1.image = product.stars?[0]
+            cell2.UI_ImageRatings2.image = product.stars?[1]
+            cell2.UI_ImageRatings3.image = product.stars?[2]
+            cell2.UI_ImageRatings4.image = product.stars?[3]
+            cell2.UI_ImageRatings5.image = product.stars?[4]
             
             return cell2
         }
-        else {
-            let cell3: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell_3")
+        else if indexPath.row == 2{
+
             
-            cell3.textLabel?.text = product.description
-            cell3.textLabel?.numberOfLines = 0
+            let cell3 = tableView.dequeueReusableCell(withIdentifier: "Cell_3") as! ThirdTableViewCell
+            
+            cell3.UI_ItemPortion?.text       = product.portions
+            cell3.UI_ItemCategory?.text      = product.category
+            cell3.UI_ItemUsersCapacity?.text = product.remainings
+            
             return cell3
-        }
+    }
+        
+            
+            let cell4: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell_4")
+            
+            cell4.textLabel?.text = product.description
+            cell4.textLabel?.numberOfLines = 0
+            return cell4
+            
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
             
             
-            return 211
+            return 100
         }
         else if indexPath.row == 1 {
+            
+            
+            return 85
+        }
+        else if indexPath.row == 2 {
             
             
             return 85
@@ -224,31 +241,17 @@ class BackupViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func View_User_Profile(_ sender: UIButton) {
         let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let DesVC = mainStoryboard.instantiateViewController(withIdentifier: "sellerItemsProfileViewController") as! SellerItemsProfileViewController
-    
-        
-        
+
+
+
         self.navigationController?.pushViewController(DesVC, animated: true)
     }
-    
     
     @IBAction func UI_ButtonOrderNow(_ sender: UIButton) {
-    
         let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let DesVC = mainStoryboard.instantiateViewController(withIdentifier: "placeOrderViewController") as! PlaceOrderViewController
-        
-        self.navigationController?.pushViewController(DesVC, animated: true)
-        
-        
-        
-    }
-    
-    @IBOutlet var UI_ImagesExplore: [UIView]!
-    
 
-    
-//    let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//    let DesVC = mainStoryboard.instantiateViewController(withIdentifier: "viewImagesViewController") as! ViewImagesViewController
-//    
-//    self.navigationController?.pushViewController(DesVC, animated: true)
+        self.navigationController?.pushViewController(DesVC, animated: true)
+    }
    
 }

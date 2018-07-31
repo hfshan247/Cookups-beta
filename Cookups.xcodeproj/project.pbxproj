@@ -30,6 +30,9 @@
 		760F735121041CC000983C7B /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760F735021041CC000983C7B /* ImageViewController.swift */; };
 		760F735321041EE600983C7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760F735221041EE600983C7B /* ViewController.swift */; };
 		760F73552104309100983C7B /* BackupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760F73542104309100983C7B /* BackupViewController.swift */; };
+		7610220C211025B300A14BD8 /* RuntimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7610220B211025B300A14BD8 /* RuntimeApp.swift */; };
+		7610220E2110368A00A14BD8 /* ThirdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7610220D2110368A00A14BD8 /* ThirdTableViewCell.swift */; };
+		76102210211055DF00A14BD8 /* Backup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7610220F211055DF00A14BD8 /* Backup.swift */; };
 		761EC69821066842008431B6 /* AddressFormViewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761EC69721066842008431B6 /* AddressFormViewControllerViewController.swift */; };
 		761EC69A21068148008431B6 /* PlaceOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761EC69921068148008431B6 /* PlaceOrderViewController.swift */; };
 		761EC69C21068D45008431B6 /* MyOrderDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761EC69B21068D45008431B6 /* MyOrderDetailsTableViewController.swift */; };
@@ -101,6 +104,9 @@
 		760F735021041CC000983C7B /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		760F735221041EE600983C7B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		760F73542104309100983C7B /* BackupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupViewController.swift; sourceTree = "<group>"; };
+		7610220B211025B300A14BD8 /* RuntimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeApp.swift; sourceTree = "<group>"; };
+		7610220D2110368A00A14BD8 /* ThirdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTableViewCell.swift; sourceTree = "<group>"; };
+		7610220F211055DF00A14BD8 /* Backup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backup.swift; sourceTree = "<group>"; };
 		761EC69721066842008431B6 /* AddressFormViewControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressFormViewControllerViewController.swift; sourceTree = "<group>"; };
 		761EC69921068148008431B6 /* PlaceOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceOrderViewController.swift; sourceTree = "<group>"; };
 		761EC69B21068D45008431B6 /* MyOrderDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderDetailsTableViewController.swift; sourceTree = "<group>"; };
@@ -296,8 +302,9 @@
 			children = (
 				760F73542104309100983C7B /* BackupViewController.swift */,
 				760960B921045BD5002EDC00 /* FirstTableViewCell.swift */,
-				760960BA21045BD5002EDC00 /* FirstTableViewCell.xib */,
 				760960BD21045D7B002EDC00 /* SecondTableViewCell.swift */,
+				7610220D2110368A00A14BD8 /* ThirdTableViewCell.swift */,
+				760960BA21045BD5002EDC00 /* FirstTableViewCell.xib */,
 				760960BE21045D7B002EDC00 /* SecondTableViewCell.xib */,
 				7606B90D21073F4A00BDABB9 /* Carosal */,
 			);
@@ -311,6 +318,14 @@
 				760F735021041CC000983C7B /* ImageViewController.swift */,
 			);
 			path = Carosal;
+			sourceTree = "<group>";
+		};
+		7610220A2110259200A14BD8 /* Run */ = {
+			isa = PBXGroup;
+			children = (
+				7610220B211025B300A14BD8 /* RuntimeApp.swift */,
+			);
+			path = Run;
 			sourceTree = "<group>";
 		};
 		7683B4BE210B076B00F29111 /* Controller */ = {
@@ -346,6 +361,7 @@
 				A3AE139B210068E8003071E9 /* Assets.xcassets */,
 				A3AE1392210068E7003071E9 /* AppDelegate.swift */,
 				A3AE139D210068E8003071E9 /* LaunchScreen.storyboard */,
+				7610220F211055DF00A14BD8 /* Backup.swift */,
 				A3AE1391210068E7003071E9 /* Cookups */,
 				A3AE13A8210068E8003071E9 /* CookupsTests */,
 				A3AE13B3210068E8003071E9 /* CookupsUITests */,
@@ -366,6 +382,7 @@
 		A3AE1391210068E7003071E9 /* Cookups */ = {
 			isa = PBXGroup;
 			children = (
+				7610220A2110259200A14BD8 /* Run */,
 				76FCB63F210B499900404932 /* Settings */,
 				76FCB63A210B3F3B00404932 /* Server */,
 				7606B90621073CD500BDABB9 /* Model */,
@@ -545,6 +562,7 @@
 				76020B2921024F5C0016B508 /* ItemsViewController.swift in Sources */,
 				760650592105AA0C00CA9B03 /* TempTableViewController.swift in Sources */,
 				7604E6AC2109157E00795CBF /* ViewImagesViewController.swift in Sources */,
+				76102210211055DF00A14BD8 /* Backup.swift in Sources */,
 				7604E6AE210915BD00795CBF /* ViewImagesInViewController.swift in Sources */,
 				A3AE1397210068E7003071E9 /* SecondViewController.swift in Sources */,
 				760F73492103C33200983C7B /* TestViewController.swift in Sources */,
@@ -563,6 +581,7 @@
 				7604520F210711A800FBFE7A /* FourthViewController.swift in Sources */,
 				76FCB637210B32D500404932 /* Filter.swift in Sources */,
 				760749C72103550F0015240A /* TempTableViewCell.swift in Sources */,
+				7610220E2110368A00A14BD8 /* ThirdTableViewCell.swift in Sources */,
 				7606505B2105C49B00CA9B03 /* PlaceOrderFillTableViewController.swift in Sources */,
 				76020B2D2102881D0016B508 /* SellerItemsProfileViewController.swift in Sources */,
 				A3AE1393210068E7003071E9 /* AppDelegate.swift in Sources */,
@@ -574,6 +593,7 @@
 				760F73552104309100983C7B /* BackupViewController.swift in Sources */,
 				760F734D2103FE9500983C7B /* OrderUIView.swift in Sources */,
 				760F735121041CC000983C7B /* ImageViewController.swift in Sources */,
+				7610220C211025B300A14BD8 /* RuntimeApp.swift in Sources */,
 				76020B2F2102A12C0016B508 /* ThirdViewController.swift in Sources */,
 				760F734F21040EC600983C7B /* DetailsViewController.swift in Sources */,
 				76FCB639210B342E00404932 /* FilterController.swift in Sources */,

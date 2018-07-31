@@ -10,7 +10,8 @@ import UIKit
 
 class ItemsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource  {
     
-    var productsArray = [Product]()
+    var productsArray: [Product] = [Product]()
+    var selectedFilter: Filter = Filter()
     
     @IBOutlet weak var UI_ItemsCollectionView: UICollectionView!
     
@@ -49,6 +50,11 @@ class ItemsViewController: UIViewController, UICollectionViewDelegate, UICollect
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Setting up the Navigation Bar Header Title
+        navigationItem.title = selectedFilter.title
+        navigationItem.titleView?.tintColor = AppSettings.darkColor
+        
+        
         // Do any additional setup after loading the view.
         
         let myRedColor = UIColor(
@@ -65,8 +71,11 @@ class ItemsViewController: UIViewController, UICollectionViewDelegate, UICollect
         // Settingup Data in Collection View
         UI_ItemsCollectionView.dataSource = self
         UI_ItemsCollectionView.delegate = self
+        productsArray = getFilteredProducts(filter: selectedFilter, products: ProductsController.getProducts())
+        //productsArray = ProductsController.getProducts()
+        print(selectedFilter.title!)
+        print(productsArray.count)
         
-        productsArray = ProductsController.getProducts()
     }
 
     override func didReceiveMemoryWarning() {
@@ -75,7 +84,7 @@ class ItemsViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return burgerTitles.count
+        return productsArray.count
     }
     
     
@@ -102,10 +111,6 @@ class ItemsViewController: UIViewController, UICollectionViewDelegate, UICollect
             
         }
         
-        
-        
-        
-        
         // Styling the product
         itemCell.UI_ItemImage.layer.borderWidth = 0.05
         itemCell.UI_ItemImage.layer.cornerRadius = 4
@@ -121,24 +126,33 @@ class ItemsViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let DesVC = mainStoryboard.instantiateViewController(withIdentifier: "backupViewController") as! BackupViewController
-        DesVC.product = productsArray[indexPath.row]
         
-        let CarosalVC = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        CarosalVC.contentImages = productsArray[indexPath.row].images!
+        DesVC.product = productsArray[indexPath.row]
+        RuntimeApp.product = productsArray[indexPath.row] 
+//        let CarosalVC = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+//        CarosalVC.contentImages = productsArray[indexPath.row].images!
+        
         
         self.navigationController?.pushViewController(DesVC, animated: true)
         
         
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func getFilteredProducts(filter: Filter, products: [Product]) -> [Product]{
+        
+         var temp_products: [Product] = [Product]()
+        
+        if (filter.id == 0){
+            return products
+        }
+        
+        for p in products{
+            if(p.filterID == filter.id){
+                temp_products.append(p)
+            }
+        }
+        
+        return temp_products
     }
-    */
 
 }

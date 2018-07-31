@@ -10,10 +10,17 @@ import UIKit
 
 class SecondTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var UI_ItemPortion: UILabel!
-    @IBOutlet weak var UI_ItemUsersCapacity: UILabel!
-    @IBOutlet weak var UI_ItemCategory: UILabel!
     
+    @IBOutlet weak var UI_ItemUserFullName: UIButton!
+    @IBOutlet weak var UI_ItemLocation: UILabel!
+    @IBOutlet weak var UI_ItemRatings: UILabel!
+    @IBOutlet weak var UI_ItemUserProfileImage: UIImageView!
+    
+    @IBOutlet weak var UI_ImageRatings1: UIImageView!
+    @IBOutlet weak var UI_ImageRatings2: UIImageView!
+    @IBOutlet weak var UI_ImageRatings3: UIImageView!
+    @IBOutlet weak var UI_ImageRatings4: UIImageView!
+    @IBOutlet weak var UI_ImageRatings5: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

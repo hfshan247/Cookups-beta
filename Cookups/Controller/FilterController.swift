@@ -26,17 +26,22 @@ class FilterController{
     }
     
     static func initializeFilters(){
-        filters.append(Filter(id:0, title: "Drink", icon: UIImage(named:"drink")!, backgroundColor: UIColor.blue, textColor: UIColor.blue, iconColor:UIColor.white))
         
-        filters.append(Filter(id:1, title: "Fish", icon:  UIImage(named:"fish")!, backgroundColor: UIColor.red, textColor: UIColor.red, iconColor:UIColor.white))
+        filters.append(Filter(id:0, title: "All", icon: UIImage(named:"restaurant_menu")!, backgroundColor: UIColor.lightGray, textColor: UIColor.lightGray, iconColor:UIColor.lightGray))
         
-        filters.append(Filter(id:2, title: "Ingredients", icon: UIImage(named:"ingredients")!, backgroundColor: UIColor.purple, textColor: UIColor.purple, iconColor:UIColor.purple))
+        filters.append(Filter(id:1, title: "Ingredients", icon: UIImage(named:"ingredients")!, backgroundColor: UIColor.purple, textColor: UIColor.purple, iconColor:UIColor.purple))
         
-        filters.append(Filter(id:3, title: "Chicken", icon: UIImage(named:"chicken")!, backgroundColor: UIColor.magenta, textColor: UIColor.magenta, iconColor:UIColor.magenta))
+        filters.append(Filter(id:2, title: "Drink", icon: UIImage(named:"drink")!, backgroundColor: UIColor.blue, textColor: UIColor.blue, iconColor:UIColor.white))
         
-        filters.append(Filter(id:4, title: "Pizza", icon: UIImage(named:"pizza")!, backgroundColor: UIColor.brown, textColor: UIColor.brown, iconColor:UIColor.brown))
+         filters.append(Filter(id:3, title: "Chicken", icon: UIImage(named:"chicken")!, backgroundColor: UIColor.magenta, textColor: UIColor.magenta, iconColor:UIColor.magenta))
         
-        filters.append(Filter(id:5, title: "All", icon: UIImage(named:"restaurant_menu")!, backgroundColor: UIColor.lightGray, textColor: UIColor.lightGray, iconColor:UIColor.lightGray))
+        filters.append(Filter(id:4, title: "Fish", icon:  UIImage(named:"fish")!, backgroundColor: UIColor.red, textColor: UIColor.red, iconColor:UIColor.white))
+        
+        filters.append(Filter(id:5, title: "Pizza", icon: UIImage(named:"pizza")!, backgroundColor: UIColor.brown, textColor: UIColor.brown, iconColor:UIColor.brown))
+        
+        filters.append(Filter(id:6, title: "Burger", icon: UIImage(named:"burger")!, backgroundColor: AppSettings.successColorDark, textColor: AppSettings.successColorDark, iconColor:UIColor.brown))
+        
+
         
     }
     

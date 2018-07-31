@@ -108,7 +108,6 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
             filterCell.UI_FilterTitle.textColor       = filter.textColor
             filterCell.UI_FilterImage.image           = filter.icon
             filterCell.UI_FilterImage.backgroundColor = filter.backgroundColor
-            
         }
         
         
@@ -130,6 +129,10 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let DesVC = mainStoryboard.instantiateViewController(withIdentifier: "itemsViewController") as! ItemsViewController
+        
+        //print(filtersArray[indexPath.row].title)
+        
+        DesVC.selectedFilter = filtersArray[indexPath.row]
         
         self.navigationController?.pushViewController(DesVC, animated: true)
         

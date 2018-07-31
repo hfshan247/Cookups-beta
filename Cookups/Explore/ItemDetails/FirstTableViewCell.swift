@@ -13,9 +13,7 @@ class FirstTableViewCell: UITableViewCell {
     @IBOutlet weak var UI_ItemTitle: UILabel!
     @IBOutlet weak var UI_ItemDate: UILabel!
     @IBOutlet weak var UI_ItemTimeSpam: UILabel!
-    @IBOutlet weak var UI_ItemUserFullName: UIButton!
-    @IBOutlet weak var UI_ItemLocation: UILabel!
-    @IBOutlet weak var UI_ItemRatings: UILabel!
+    
     
     
     override func awakeFromNib() {
