@@ -48,7 +48,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         filtersArray = FilterController.getFilters()
         
-        
+        setupData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -137,6 +137,11 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         self.navigationController?.pushViewController(DesVC, animated: true)
         
         
+    }
+    
+    func setupData(){
+       UsersController.initializeUsers()
+        ProductsController.initializeProducts()
     }
     
     

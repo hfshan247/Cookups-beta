@@ -11,8 +11,9 @@ import UIKit
 class PlaceOrderViewController: UIViewController {
 
     
-    
-    
+//    var product: Product = Product()
+//    var user: User = User()
+//    var order: Order = Order()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,8 @@ class PlaceOrderViewController: UIViewController {
     @IBAction func UI_Button_ConfirmPlaceOrger(_ sender: UIButton) {
         let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let DesVC = mainStoryboard.instantiateViewController(withIdentifier: "myOrderDetailsViewController") as! MyOrderDetailsViewController
+        
+        OrderController.orders.append(RuntimeApp.placeOrder)
         
         self.navigationController?.pushViewController(DesVC, animated: true)
     }
@@ -49,6 +52,8 @@ class PlaceOrderViewController: UIViewController {
         
         self.navigationController?.pushViewController(DesVC, animated: true)
     }
+    
+    
     
 
 }

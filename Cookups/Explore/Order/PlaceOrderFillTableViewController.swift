@@ -9,15 +9,60 @@
 import UIKit
 
 class PlaceOrderFillTableViewController: UITableViewController {
-
+    
+    var datePicker: UIDatePicker!
+    
+    var count: Int? = 6;
+    
+    var product: Product = Product()
+    var order: Order = Order()
+    
+    @IBOutlet weak var UI_LabelTitle: UILabel!
+    @IBOutlet weak var lblPortions: UILabel!
+    @IBOutlet weak var UI_LabelPrice: UILabel!
+    @IBOutlet weak var UI_LabelTotal: UILabel!
+    @IBOutlet weak var UI_LabelAddressSelected: UILabel!
+    @IBOutlet weak var UI_LabelAvailableInfo: UILabel!
+    @IBOutlet weak var UI_LabelDeliveryDate: UILabel!
+    @IBOutlet weak var UI_LabelDeliveryTime: UILabel!
+    @IBOutlet weak var UI_LabelPaymentType: UILabel!
+    
+    @IBOutlet weak var UI_StepperPortions: UIStepper!
+    
+    
+    // Buttons
+//    @IBOutlet weak var UI_Button_SelectTime: UIButton!
+    
+    @IBAction func Action_Button_SelectTime(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Popups", bundle: nil)
+        let datePopup = storyboard.instantiateViewController(withIdentifier: "datePopupViewController") as! DatePopupViewController
+            
+        self.present(datePopup, animated: true)
+        
+        
+        
+        //let timePopup = storyboard.instantiateInitialViewController()!
+        print()
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        
+        // Settingup data
+        product = RuntimeApp.product
+        order = RuntimeApp.placeOrder
+        
+        
+        // Designing
+        customizeViwe()
+        // DatePicker
+        datePicker = UIDatePicker()
+        datePicker.center = view.center
+        //view.addSubview(datePicker)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,16 +102,87 @@ class PlaceOrderFillTableViewController: UITableViewController {
         return 0
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+
+        if(section == 5){
+            return 0.1
+        }
         
-//        let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//        let DesVC = mainStoryboard.instantiateViewController(withIdentifier: "addressViewController") as! AddressViewController
+        return 10
+    }
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.1
+    }
+    
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        <#code#>
+//    }
+    
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        if (indexPath.row == 0 ){
 //
-//        self.navigationController?.pushViewController(DesVC, animated: true)
+//            selectDate()
+//
+//        }
+//        if (indexPath.row == 6){
+//              performSegue(withIdentifier: "segue_address", sender: self)
+//        }
+//
+//
+////        let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+////        let DesVC = mainStoryboard.instantiateViewController(withIdentifier: "addressViewController") as! AddressViewController
+////
+////        self.navigationController?.pushViewController(DesVC, animated: true)
+//
+//
+//
+//    }
+    //            count = count! - 1
+    //            UI_LabelPortions.text = String(describing: count!)
+
+    
+    @IBAction func UI_StepperForPortions(_ sender: UIStepper) {
         
-        performSegue(withIdentifier: "segue_address", sender: self)
+        order.portions = Int(sender.value)
+        lblPortions.text = String(describing: order.portions!)
+        
+        order.total = order.portions! * product.price!
+        UI_LabelTotal.text = "Rs. " +  String(describing: order.total!)
+        
         
     }
+    
+    func customizeViwe(){
+        // Customize view:
+        
+        //order.portions = Int(sender.value)
+        lblPortions.text = String(describing: order.portions!)
+        
+        order.total = order.portions! * product.price!
+        UI_LabelTotal.text = "Rs. " +  String(describing: order.total!)
+        
+        UI_LabelTitle.text = product.title
+//        UI_LabelPortions.text = String(describing: order.portions!)
+//
+        UI_LabelPrice.text = "Rs. " + String(describing: product.price!)
+//
+//
+//        // Customizing Stepper:
+        UI_StepperPortions.maximumValue = Double(10)
+//
+
+    }
+    
+    
+    func selectDate(){
+     
+        
+        //let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let date = UIDatePicker()
+    
+    }
+    
+    
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

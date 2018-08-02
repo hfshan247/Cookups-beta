@@ -12,16 +12,17 @@ import UIKit
 struct Product{
     
     let id:          Int?
+    let userID:      Int?
     let filterID:    Int?
     let title:       String?
-    let userName:    String?
-    let userPhoto:   UIImage?
+    // let userName:    String?
+    // let userPhoto:   UIImage?
     let time:        String?
     let date:        String?
     let location:    String?
     let ratings:     String?
     let stars:       [UIImage]?
-    let price:       String?
+    let price:       Int?
     let images:      [UIImage]?
     let portions:    String?
     let category:    String?
@@ -30,18 +31,34 @@ struct Product{
     let description: String?
     let ratingsDescription: String?
     let liked:       UIImage?
+    let maxPortions: Int?
     
-    init(id: Int = 0, filterID: Int = 0, title: String? = "User name",userName: String? = "Temp String", userPhoto: UIImage? = UIImage(named: "profile"), time: String? = "Temp String", date: String? = "Temp String", location: String? = "Temp String", ratings: String? = "Temp String",
+    // User Info in Product
+    // let user: User?
+    
+    init(id: Int = 0, userID: Int? = 0, filterID: Int = 0, title: String? = "Temp String",
+         // userName: String? = "Temp String", userPhoto: UIImage? = UIImage(named: "profile"),
+         time: String? = "Temp String", date: String? = "Temp String", location: String? = "Temp String", ratings: String? = "Temp String",
          
          stars: [UIImage] = [UIImage(named: "star_1")!, UIImage(named: "star_1")!,UIImage(named: "star_1")!,UIImage(named: "star_1")!, UIImage(named: "star_1")!],
          
-         price: String? = "Temp String", images: [UIImage]? = [UIImage(named: "CheeseBurger")!, UIImage(named: "CheeseBurger")!], portions: String? = "Temp String", category: String? = "Temp String", remainings: String? = "Temp String", likedByYou: Bool? = false, description: String? = "Temp String", ratingsDescription: String? = "Temp Ratings", liked: UIImage? = UIImage(named: "heart_red")) {
+         price:  Int? = 100, images: [UIImage]? = [UIImage(named: "CheeseBurger")!, UIImage(named: "CheeseBurger")!],
+         portions: String? = "Temp String", category: String? = "Temp String", remainings: String? = "Temp String",
+         likedByYou: Bool? = false,
+         description: String? = "Temp String",
+         ratingsDescription: String? = "Temp Ratings",
+         liked: UIImage? = UIImage(named: "heart_red"),
+         maxPortions: Int? = 1
+         //user: User? = User()
+        
+        ) {
         
         self.id          = id
+        self.userID      = userID
         self.filterID    = filterID
         self.title       = title
-        self.userName    = userName
-        self.userPhoto   = userPhoto
+        //self.userName    = userName
+        //self.userPhoto   = userPhoto
         self.time        = time
         self.date        = date
         self.location    = location
@@ -56,5 +73,7 @@ struct Product{
         self.ratingsDescription = ratingsDescription
         self.stars       = stars
         self.liked       = liked
+        self.maxPortions = maxPortions
+        //self.user        = user
     }
 }

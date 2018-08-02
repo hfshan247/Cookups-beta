@@ -71,7 +71,8 @@ class ItemsViewController: UIViewController, UICollectionViewDelegate, UICollect
         // Settingup Data in Collection View
         UI_ItemsCollectionView.dataSource = self
         UI_ItemsCollectionView.delegate = self
-        productsArray = getFilteredProducts(filter: selectedFilter, products: ProductsController.getProducts())
+        productsArray = ProductsController.getProducts(filter: selectedFilter)
+        // productsArray = getFilteredProducts(filter: selectedFilter, products: ProductsController.getProducts())
         //productsArray = ProductsController.getProducts()
         print(selectedFilter.title!)
         print(productsArray.count)
@@ -97,10 +98,10 @@ class ItemsViewController: UIViewController, UICollectionViewDelegate, UICollect
             
             itemCell.UI_ItemImage.image             = product.images?[0]
             itemCell.UI_ItemTitle.text              = product.title
-            itemCell.UI_LabelUserName.text          = product.userName
-            itemCell.UI_ImageUserProfilAvatar.image = product.userPhoto
+            itemCell.UI_LabelUserName.text          = UsersController.getUser(id: product.userID!).userName
+            itemCell.UI_ImageUserProfilAvatar.image = UsersController.getUser(id: product.userID!).userPhoto
             itemCell.UI_LabelDay.text               = product.date
-            itemCell.UI_LabelPrice.text             = product.price
+            itemCell.UI_LabelPrice.text             = "Rs. " +  String(product.price!)
             itemCell.UI_LabelLocation.text          = product.location
             
             itemCell.UI_ImageRatings1.image         = product.stars?[0]
@@ -136,23 +137,6 @@ class ItemsViewController: UIViewController, UICollectionViewDelegate, UICollect
         self.navigationController?.pushViewController(DesVC, animated: true)
         
         
-    }
-    
-    func getFilteredProducts(filter: Filter, products: [Product]) -> [Product]{
-        
-         var temp_products: [Product] = [Product]()
-        
-        if (filter.id == 0){
-            return products
-        }
-        
-        for p in products{
-            if(p.filterID == filter.id){
-                temp_products.append(p)
-            }
-        }
-        
-        return temp_products
     }
 
 }

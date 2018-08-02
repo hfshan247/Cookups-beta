@@ -10,8 +10,8 @@ import UIKit
 
 class BackupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-     var product: Product = Product()
-   
+    var product: Product = Product()
+    var user: User = User()
     
     @IBOutlet weak var UI_TableView: UITableView!
     @IBOutlet var UI_ImagesExplore: [UIView]!
@@ -44,6 +44,9 @@ class BackupViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Settingup Data
+        user = UsersController.getUser(id: product.userID!)
+        
         // Do any additional setup after loading the view.
         
         self.UpdateView()
@@ -74,7 +77,7 @@ class BackupViewController: UIViewController, UITableViewDelegate, UITableViewDa
         //ViewController.contentImages = product.images!
         
         // Preview Product:
-        UI_LabelPrice.text = product.price
+        UI_LabelPrice.text = "Rs. " +  String(describing: product.price!)
         UI_ImageLiked.image = product.liked
     }
     
@@ -186,8 +189,8 @@ class BackupViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             cell2.UI_ItemLocation?.text = product.location
             cell2.UI_ItemRatings?.text  = product.ratingsDescription
-            cell2.UI_ItemUserFullName.setTitle(product.userName, for: .normal)
-            
+            cell2.UI_ItemUserFullName.setTitle(user.userName, for: .normal)
+            cell2.UI_ItemUserProfileImage.image = user.userPhoto
             cell2.UI_ImageRatings1.image = product.stars?[0]
             cell2.UI_ImageRatings2.image = product.stars?[1]
             cell2.UI_ImageRatings3.image = product.stars?[2]
@@ -241,8 +244,8 @@ class BackupViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func View_User_Profile(_ sender: UIButton) {
         let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let DesVC = mainStoryboard.instantiateViewController(withIdentifier: "sellerItemsProfileViewController") as! SellerItemsProfileViewController
-
-
+        
+        DesVC.selected_seller = UsersController.getUser(id: product.userID!)
 
         self.navigationController?.pushViewController(DesVC, animated: true)
     }
@@ -250,7 +253,9 @@ class BackupViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func UI_ButtonOrderNow(_ sender: UIButton) {
         let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let DesVC = mainStoryboard.instantiateViewController(withIdentifier: "placeOrderViewController") as! PlaceOrderViewController
-
+        
+        RuntimeApp.product = product
+        
         self.navigationController?.pushViewController(DesVC, animated: true)
     }
    
