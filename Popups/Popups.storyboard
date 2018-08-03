@@ -102,7 +102,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="UI_Action_SelectDate:" destination="dkf-qd-hOA" eventType="touchUpInside" id="Y59-Tu-yyD"/>
+                                            <action selector="UI_Action_SelectTime:" destination="dkf-qd-hOA" eventType="touchUpInside" id="EQb-2W-5or"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -113,9 +113,9 @@
                         <viewLayoutGuide key="safeArea" id="pOy-Wv-41x"/>
                     </view>
                     <connections>
-                        <outlet property="UI_ButtonSelectDate" destination="6MR-Et-ngn" id="Jqs-VC-1lZ"/>
-                        <outlet property="UI_DatePicker" destination="HWe-Yq-KzG" id="QFh-ng-VdK"/>
-                        <outlet property="UI_LabelTitle" destination="hfu-RT-QY3" id="EYl-Ai-hsr"/>
+                        <outlet property="UI_ButtonSelectTime" destination="6MR-Et-ngn" id="Scm-Kr-vYM"/>
+                        <outlet property="UI_LabelTitle" destination="hfu-RT-QY3" id="gae-Gu-0gc"/>
+                        <outlet property="UI_TimePicker" destination="HWe-Yq-KzG" id="uLM-VO-U1t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TTV-Tw-S6Z" userLabel="First Responder" sceneMemberID="firstResponder"/>

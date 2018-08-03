@@ -17,7 +17,15 @@ class DatePopupViewController: UIViewController {
     @IBOutlet weak var UI_DatePicker: UIDatePicker!
     @IBOutlet weak var UI_ButtonSelectDate: UIButton!
     
+    var delegateDate: DatePopupDelegate?
     
+    var formatedDate: String{
+        get{
+            let formatter = DateFormatter()
+            formatter.dateStyle = .short
+            return formatter.string(from: UI_DatePicker.date)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +34,7 @@ class DatePopupViewController: UIViewController {
 //        
 //        view.isUserInteractionEnabled = true
 //        view.addGestureRecognizer(tapGestureRecognizer)
-        
+        UI_DatePicker.datePickerMode = .date
         
         
     }
@@ -38,7 +46,7 @@ class DatePopupViewController: UIViewController {
     }
     
     @IBAction func UI_Action_SelectDate(_ sender: UIButton) {
-        
+        delegateDate?.popupDateSelected(date: formatedDate)
         dismiss(animated: true)
         
     }

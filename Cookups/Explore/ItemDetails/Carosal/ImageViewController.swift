@@ -20,6 +20,8 @@ class ImageViewController: UIViewController {
 //        }
 //    }
     
+    var currentIndex = 0
+    
     var imageName: UIImage = UIImage(named: "HolsinBurger")!
     
     @IBOutlet weak var UI_ContentImageView: UIImageView!

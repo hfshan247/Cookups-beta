@@ -57,6 +57,8 @@
 		764481BD2111C5EE005A6243 /* OrderStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764481BC2111C5EE005A6243 /* OrderStatus.swift */; };
 		764481BF2111C8AA005A6243 /* OrderLife.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764481BE2111C8AA005A6243 /* OrderLife.swift */; };
 		764481C12111D7C9005A6243 /* OrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764481C02111D7C9005A6243 /* OrderController.swift */; };
+		7650691221147BB5003E8447 /* TimePopupDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7650691121147BB5003E8447 /* TimePopupDelegate.swift */; };
+		76506914211482E5003E8447 /* DatePopupDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76506913211482E5003E8447 /* DatePopupDelegate.swift */; };
 		765CF1482114167C00B9A96D /* TimePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765CF1472114167C00B9A96D /* TimePopupViewController.swift */; };
 		76604EBA211317D7000D9B41 /* Popups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76604EB9211317D7000D9B41 /* Popups.storyboard */; };
 		76604EBD21132113000D9B41 /* DatePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76604EBC21132113000D9B41 /* DatePopupViewController.swift */; };
@@ -146,6 +148,8 @@
 		764481BC2111C5EE005A6243 /* OrderStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatus.swift; sourceTree = "<group>"; };
 		764481BE2111C8AA005A6243 /* OrderLife.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderLife.swift; sourceTree = "<group>"; };
 		764481C02111D7C9005A6243 /* OrderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderController.swift; sourceTree = "<group>"; };
+		7650691121147BB5003E8447 /* TimePopupDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePopupDelegate.swift; sourceTree = "<group>"; };
+		76506913211482E5003E8447 /* DatePopupDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePopupDelegate.swift; sourceTree = "<group>"; };
 		765CF1472114167C00B9A96D /* TimePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePopupViewController.swift; sourceTree = "<group>"; };
 		76604EB9211317D7000D9B41 /* Popups.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Popups.storyboard; sourceTree = "<group>"; };
 		76604EBC21132113000D9B41 /* DatePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePopupViewController.swift; sourceTree = "<group>"; };
@@ -372,6 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				76604EBC21132113000D9B41 /* DatePopupViewController.swift */,
+				76506913211482E5003E8447 /* DatePopupDelegate.swift */,
 			);
 			path = Date;
 			sourceTree = "<group>";
@@ -380,6 +385,7 @@
 			isa = PBXGroup;
 			children = (
 				765CF1472114167C00B9A96D /* TimePopupViewController.swift */,
+				7650691121147BB5003E8447 /* TimePopupDelegate.swift */,
 			);
 			path = Time;
 			sourceTree = "<group>";
@@ -662,6 +668,7 @@
 				761022122110896A00A14BD8 /* User.swift in Sources */,
 				76020B312102B95C0016B508 /* ItemDetailsViewController.swift in Sources */,
 				7683B4BD210B058D00F29111 /* Product.swift in Sources */,
+				76506914211482E5003E8447 /* DatePopupDelegate.swift in Sources */,
 				76FCB63C210B3F6F00404932 /* FilterServer.swift in Sources */,
 				76604EBD21132113000D9B41 /* DatePopupViewController.swift in Sources */,
 				7604520F210711A800FBFE7A /* FourthViewController.swift in Sources */,
@@ -679,6 +686,7 @@
 				7683B4C0210B078E00F29111 /* ProductsController.swift in Sources */,
 				760F73552104309100983C7B /* BackupViewController.swift in Sources */,
 				7610221421108ECE00A14BD8 /* UsersController.swift in Sources */,
+				7650691221147BB5003E8447 /* TimePopupDelegate.swift in Sources */,
 				760F734D2103FE9500983C7B /* OrderUIView.swift in Sources */,
 				760F735121041CC000983C7B /* ImageViewController.swift in Sources */,
 				7610220C211025B300A14BD8 /* RuntimeApp.swift in Sources */,

@@ -11,15 +11,16 @@ import UIKit
 class ViewImagesInViewController: UIViewController {
 
     var itemIndex: Int = 0
-    var imageName: String = "" {
-        didSet{
-            if let imageView = UI_ContentImageView{
-                imageView.image = UIImage(named: imageName)
-                print(imageName)
-            }
-        }
-    }
-    
+//    var imageName: String = "" {
+//        didSet{
+//            if let imageView = UI_ContentImageView{
+//                imageView.image = UIImage(named: imageName)
+//                print(imageName)
+//            }
+//        }
+//    }
+
+    var image: UIImage = UIImage()
     
     @IBOutlet weak var UI_ContentImageView: UIImageView!
     
@@ -27,7 +28,7 @@ class ViewImagesInViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        UI_ContentImageView.image = UIImage(named: imageName)
+        UI_ContentImageView.image = image
     }
 
     override func didReceiveMemoryWarning() {

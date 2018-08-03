@@ -12,6 +12,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
 
     var pageViewController :UIPageViewController?
  
+    var currentImageIndex = 0
 //    var contentImages: [UIImage] = [
 //        UIImage(named:"BaconCheese")!,
 //        UIImage(named: "CreoleCrab")!,
@@ -83,6 +84,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
         let itemController = viewController as! ImageViewController
         
         if itemController.itemIndex + 1 < (contentImages?.count)!{
+            
             return getItemController(itemIndex: itemController.itemIndex + 1)
         }
         

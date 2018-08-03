@@ -1594,8 +1594,9 @@
                                                         <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="Action_Button_SelectDate:" destination="Y7x-Ny-xfz" eventType="touchUpInside" id="t4G-dx-NwS"/>
-                                                        <action selector="Action_Button_SelectTime:" destination="Y7x-Ny-xfz" eventType="touchUpInside" id="nzF-5F-8N7"/>
+                                                        <action selector="Action_Button_SelectDate:" destination="Y7x-Ny-xfz" eventType="touchUpInside" id="Smo-vM-UgN"/>
+                                                        <action selector="Action_Button_SelectDeliveryTime:" destination="Y7x-Ny-xfz" eventType="touchUpInside" id="CgM-Gn-egk"/>
+                                                        <action selector="Action_Button_SelectTime:" destination="Y7x-Ny-xfz" eventType="touchUpInside" id="VhI-Sq-SoF"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -1623,7 +1624,8 @@
                                                         <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="Action_Button_SelectTime:" destination="Y7x-Ny-xfz" eventType="touchUpInside" id="rAo-EQ-GUp"/>
+                                                        <action selector="Action_Button_SelectDeliveryDate:" destination="Y7x-Ny-xfz" eventType="touchUpInside" id="Yy9-2H-cyf"/>
+                                                        <action selector="Action_Button_SelectTime:" destination="Y7x-Ny-xfz" eventType="touchUpInside" id="c2h-dJ-M20"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -1689,10 +1691,6 @@
                                                     <state key="normal" title="Mon, July 23">
                                                         <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
-                                                    <connections>
-                                                        <action selector="Action_Button_SelectDate:" destination="Y7x-Ny-xfz" eventType="touchUpInside" id="prQ-Sn-COD"/>
-                                                        <action selector="Action_Button_SelectTime:" destination="Y7x-Ny-xfz" eventType="touchUpInside" id="ZKL-78-avu"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -1718,9 +1716,6 @@
                                                     <state key="normal" title="12:00 AM">
                                                         <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
-                                                    <connections>
-                                                        <action selector="Action_Button_SelectTime:" destination="Y7x-Ny-xfz" eventType="touchUpInside" id="Drr-QT-VCG"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -1838,6 +1833,8 @@
                         <outlet property="UI_LabelTitle" destination="a44-3Q-5MF" id="4QV-4I-fPC"/>
                         <outlet property="UI_LabelTotal" destination="RZh-K7-TdW" id="Msb-pD-L6e"/>
                         <outlet property="UI_StepperPortions" destination="UZ4-Hj-YeP" id="Pwy-Cy-3VK"/>
+                        <outlet property="btnLblDeliveryDate" destination="uTV-gF-1SB" id="U0v-6Q-aHr"/>
+                        <outlet property="btnLblDeliveryTime" destination="HSD-IJ-kiS" id="QCe-Ze-wzE"/>
                         <outlet property="lblPortions" destination="TSB-2F-FOM" id="rWh-2u-TkE"/>
                         <segue destination="gqj-Kk-bi4" kind="show" identifier="segue_address" id="5pC-Zh-MMV"/>
                     </connections>
@@ -2305,7 +2302,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ga8-mC-2fd">
-                                <rect key="frame" x="0.0" y="233" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="274" width="375" height="159"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="og7-ek-rQc">
@@ -2329,7 +2326,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="5406" y="-2041"/>
+            <point key="canvasLocation" x="5405.6000000000004" y="-2041.529235382309"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="eVn-Xb-v1F">

@@ -13,4 +13,5 @@ class RuntimeApp{
     static var selectedFilter: Filter = Filter()
     static var product: Product = Product()
     static var placeOrder: Order = Order()
+    
 }

@@ -12,15 +12,18 @@ class ViewImagesViewController: UIViewController, UIPageViewControllerDataSource
 
     var pageViewController :UIPageViewController?
     
-    let contentImages = [
-        "CreoleCrab",
-        "BaconCheese",
-        "CaramelizedOnion",
+    var contentImages: [UIImage] = [
+        UIImage(named: "CreoleCrab")!,
+        UIImage(named: "BaconCheese")!,
+        UIImage(named: "CaramelizedOnion")!,
         ]
+    
+    var currentImage = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        contentImages = RuntimeApp.product.images!
         // Do any additional setup after loading the view.
         
         createPageViewController()
@@ -81,6 +84,7 @@ class ViewImagesViewController: UIViewController, UIPageViewControllerDataSource
         let itemController = viewController as! ViewImagesInViewController
         
         if itemController.itemIndex + 1 < contentImages.count{
+            currentImage = itemController.itemIndex + 1
             return getItemController(itemIndex: itemController.itemIndex + 1)
         }
         
@@ -117,7 +121,7 @@ class ViewImagesViewController: UIViewController, UIPageViewControllerDataSource
             let pageItemController = self.storyboard?.instantiateViewController(withIdentifier: "viewImagesInViewController") as! ViewImagesInViewController
             
             pageItemController.itemIndex = itemIndex
-            pageItemController.imageName = contentImages[itemIndex]
+            pageItemController.image = contentImages[itemIndex]
             
             return pageItemController
             
