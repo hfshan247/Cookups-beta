@@ -35,16 +35,16 @@ class PlaceOrderFillTableViewController: UITableViewController {
     
     @IBAction func Action_Button_SelectTime(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Popups", bundle: nil)
-        let datePopup = storyboard.instantiateViewController(withIdentifier: "datePopupViewController") as! DatePopupViewController
-            
-        self.present(datePopup, animated: true)
-        
-        
-        
-        //let timePopup = storyboard.instantiateInitialViewController()!
-        print()
-        
+        let timePopup = storyboard.instantiateViewController(withIdentifier: "timePopupViewController") as! TimePopupViewController
+        self.present(timePopup, animated: true)
     }
+    
+    @IBAction func Action_Button_SelectDate(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Popups", bundle: nil)
+        let timePopup = storyboard.instantiateViewController(withIdentifier: "datePopupViewController") as! DatePopupViewController
+        self.present(timePopup, animated: true)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

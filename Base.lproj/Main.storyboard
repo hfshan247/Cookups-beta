@@ -312,7 +312,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1449" y="-607"/>
+            <point key="canvasLocation" x="1449" y="-674"/>
         </scene>
         <!--Notifications-->
         <scene sceneID="j1d-ad-gAZ">
@@ -972,7 +972,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dno-0G-uHe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="760" y="-601"/>
+            <point key="canvasLocation" x="759" y="-674"/>
         </scene>
         <!--Search-->
         <scene sceneID="3Hh-Mm-UXH">
@@ -991,7 +991,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fSp-My-cg4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="760" y="140"/>
+            <point key="canvasLocation" x="758" y="-1"/>
         </scene>
         <!--Notifications-->
         <scene sceneID="T7A-bg-CyY">
@@ -1587,13 +1587,17 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mon, July 23" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyz-9G-e98">
-                                                    <rect key="frame" x="278" y="0.0" width="81" height="44"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uTV-gF-1SB">
+                                                    <rect key="frame" x="195" y="0.0" width="164" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
-                                                    <color key="textColor" red="1" green="0.22493194599999999" blue="0.25302485749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <state key="normal" title="Mon, July 23">
+                                                        <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="Action_Button_SelectDate:" destination="Y7x-Ny-xfz" eventType="touchUpInside" id="t4G-dx-NwS"/>
+                                                        <action selector="Action_Button_SelectTime:" destination="Y7x-Ny-xfz" eventType="touchUpInside" id="nzF-5F-8N7"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -1679,13 +1683,17 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mon, July 23" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3z8-cL-RNz">
-                                                    <rect key="frame" x="188" y="0.0" width="171" height="44"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXt-HP-jeJ">
+                                                    <rect key="frame" x="195" y="0.0" width="164" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
-                                                    <color key="textColor" red="1" green="0.22493194599999999" blue="0.25302485749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <state key="normal" title="Mon, July 23">
+                                                        <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="Action_Button_SelectDate:" destination="Y7x-Ny-xfz" eventType="touchUpInside" id="prQ-Sn-COD"/>
+                                                        <action selector="Action_Button_SelectTime:" destination="Y7x-Ny-xfz" eventType="touchUpInside" id="ZKL-78-avu"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -1704,13 +1712,16 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="11:00 AM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQZ-k5-IIp">
-                                                    <rect key="frame" x="188" y="-1" width="171" height="44"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2CJ-0R-psC">
+                                                    <rect key="frame" x="195" y="0.0" width="164" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
-                                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <state key="normal" title="12:00 AM">
+                                                        <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="Action_Button_SelectTime:" destination="Y7x-Ny-xfz" eventType="touchUpInside" id="Drr-QT-VCG"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1822,7 +1833,6 @@
                     <connections>
                         <outlet property="UI_LabelAddressSelected" destination="Daq-Mf-rYq" id="oZa-wa-tMV"/>
                         <outlet property="UI_LabelAvailableInfo" destination="R2F-YX-Tsc" id="KLC-Qg-ACO"/>
-                        <outlet property="UI_LabelDeliveryDate" destination="nyz-9G-e98" id="m04-4r-J6g"/>
                         <outlet property="UI_LabelPaymentType" destination="9hm-ck-3tn" id="7hN-im-Qym"/>
                         <outlet property="UI_LabelPrice" destination="ojE-Gz-OTs" id="sHU-dp-kTS"/>
                         <outlet property="UI_LabelTitle" destination="a44-3Q-5MF" id="4QV-4I-fPC"/>
@@ -2270,7 +2280,7 @@
                 <pageViewController storyboardIdentifier="viewImagesPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="RwC-ds-TDU" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yj1-MI-OqK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4361" y="-2028"/>
+            <point key="canvasLocation" x="4254" y="-2028"/>
         </scene>
         <!--View Images In View Controller-->
         <scene sceneID="YoT-l6-eWa">
@@ -2302,7 +2312,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eUu-jv-rvI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5117.6000000000004" y="-2028.0359820089957"/>
+            <point key="canvasLocation" x="4916" y="-2028"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="eVn-Xb-v1F">
@@ -2748,7 +2758,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IRC-zf-vYM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2897" y="-596"/>
+            <point key="canvasLocation" x="2897" y="-674"/>
         </scene>
         <!--My Order Details View Controller-->
         <scene sceneID="vwh-wm-zQb">
@@ -2803,7 +2813,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xw5-nL-khg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2121" y="-601"/>
+            <point key="canvasLocation" x="2129" y="-674"/>
         </scene>
     </scenes>
     <resources>

@@ -57,6 +57,9 @@
 		764481BD2111C5EE005A6243 /* OrderStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764481BC2111C5EE005A6243 /* OrderStatus.swift */; };
 		764481BF2111C8AA005A6243 /* OrderLife.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764481BE2111C8AA005A6243 /* OrderLife.swift */; };
 		764481C12111D7C9005A6243 /* OrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764481C02111D7C9005A6243 /* OrderController.swift */; };
+		765CF1482114167C00B9A96D /* TimePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765CF1472114167C00B9A96D /* TimePopupViewController.swift */; };
+		765CF14A2114334A00B9A96D /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765CF1492114334A00B9A96D /* ItemViewController.swift */; };
+		765CF14C2114335D00B9A96D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765CF14B2114335D00B9A96D /* ViewController.swift */; };
 		76604EBA211317D7000D9B41 /* Popups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76604EB9211317D7000D9B41 /* Popups.storyboard */; };
 		76604EBD21132113000D9B41 /* DatePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76604EBC21132113000D9B41 /* DatePopupViewController.swift */; };
 		7683B4BD210B058D00F29111 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683B4BC210B058D00F29111 /* Product.swift */; };
@@ -145,6 +148,9 @@
 		764481BC2111C5EE005A6243 /* OrderStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatus.swift; sourceTree = "<group>"; };
 		764481BE2111C8AA005A6243 /* OrderLife.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderLife.swift; sourceTree = "<group>"; };
 		764481C02111D7C9005A6243 /* OrderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderController.swift; sourceTree = "<group>"; };
+		765CF1472114167C00B9A96D /* TimePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePopupViewController.swift; sourceTree = "<group>"; };
+		765CF1492114334A00B9A96D /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		765CF14B2114335D00B9A96D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		76604EB9211317D7000D9B41 /* Popups.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Popups.storyboard; sourceTree = "<group>"; };
 		76604EBC21132113000D9B41 /* DatePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePopupViewController.swift; sourceTree = "<group>"; };
 		7683B4BC210B058D00F29111 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -371,6 +377,9 @@
 			children = (
 				76604EB9211317D7000D9B41 /* Popups.storyboard */,
 				76604EBC21132113000D9B41 /* DatePopupViewController.swift */,
+				765CF1472114167C00B9A96D /* TimePopupViewController.swift */,
+				765CF1492114334A00B9A96D /* ItemViewController.swift */,
+				765CF14B2114335D00B9A96D /* ViewController.swift */,
 			);
 			path = Popups;
 			sourceTree = "<group>";
@@ -607,10 +616,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				760960BB21045BD5002EDC00 /* FirstTableViewCell.swift in Sources */,
+				765CF14A2114334A00B9A96D /* ItemViewController.swift in Sources */,
 				760F735321041EE600983C7B /* ViewController.swift in Sources */,
 				76EC15BA210F215900624809 /* ProductServer.swift in Sources */,
 				764481BD2111C5EE005A6243 /* OrderStatus.swift in Sources */,
 				761EC69A21068148008431B6 /* PlaceOrderViewController.swift in Sources */,
+				765CF1482114167C00B9A96D /* TimePopupViewController.swift in Sources */,
 				76020B2921024F5C0016B508 /* ItemsViewController.swift in Sources */,
 				760650592105AA0C00CA9B03 /* TempTableViewController.swift in Sources */,
 				764481B12111B9BE005A6243 /* Order.swift in Sources */,
@@ -643,6 +654,7 @@
 				7606505B2105C49B00CA9B03 /* PlaceOrderFillTableViewController.swift in Sources */,
 				76020B2D2102881D0016B508 /* SellerItemsProfileViewController.swift in Sources */,
 				A3AE1393210068E7003071E9 /* AppDelegate.swift in Sources */,
+				765CF14C2114335D00B9A96D /* ViewController.swift in Sources */,
 				7606505D2105C61200CA9B03 /* AddressViewController.swift in Sources */,
 				761EC6A42106B2EB008431B6 /* FifthViewController.swift in Sources */,
 				764481B92111BF9B005A6243 /* GeoPosition.swift in Sources */,

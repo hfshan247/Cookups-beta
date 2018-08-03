@@ -10,6 +10,9 @@ import UIKit
 
 class DatePopupViewController: UIViewController {
 
+    
+    @IBOutlet var viewBachground: UIView!
+    @IBOutlet var datePopupBackground: UIView!
     @IBOutlet weak var UI_LabelTitle: UILabel!
     @IBOutlet weak var UI_DatePicker: UIDatePicker!
     @IBOutlet weak var UI_ButtonSelectDate: UIButton!
@@ -40,7 +43,9 @@ class DatePopupViewController: UIViewController {
         
     }
     
-    
+    override var prefersStatusBarHidden: Bool{
+        return true
+    }
     
     
 }

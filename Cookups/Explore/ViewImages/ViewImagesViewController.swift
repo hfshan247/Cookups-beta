@@ -16,7 +16,6 @@ class ViewImagesViewController: UIViewController, UIPageViewControllerDataSource
         "CreoleCrab",
         "BaconCheese",
         "CaramelizedOnion",
-        "JuicyLucy",
         ]
     
     override func viewDidLoad() {
