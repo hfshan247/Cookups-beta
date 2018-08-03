@@ -29,6 +29,20 @@ class ImageViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         UI_ContentImageView.image = imageName
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        UI_ContentImageView.isUserInteractionEnabled = true
+        UI_ContentImageView.addGestureRecognizer(tapGestureRecognizer)
+        
+    }
+    
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        let tappedImage = tapGestureRecognizer.view as! UIImageView
+        
+        // Your action
+        let imagePopup = self.storyboard?.instantiateViewController(withIdentifier: "viewImagesViewController") as! ViewImagesViewController
+        self.present(imagePopup, animated: true)
     }
 
     override func didReceiveMemoryWarning() {

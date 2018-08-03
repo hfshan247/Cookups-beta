@@ -27,6 +27,7 @@ class ViewImagesInViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        UI_ContentImageView.image = UIImage(named: imageName)
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,15 +35,13 @@ class ViewImagesInViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func btnExit(_ sender: UIButton) {
+        dismiss(animated: true)
     }
-    */
-
+    
+    override var prefersStatusBarHidden: Bool{
+        return true
+    }
+    
 }

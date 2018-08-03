@@ -34,9 +34,14 @@ class PlaceOrderFillTableViewController: UITableViewController {
 //    @IBOutlet weak var UI_Button_SelectTime: UIButton!
     
     @IBAction func Action_Button_SelectTime(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Popups", bundle: nil)
-        let timePopup = storyboard.instantiateViewController(withIdentifier: "timePopupViewController") as! TimePopupViewController
-        self.present(timePopup, animated: true)
+//        let storyboard = UIStoryboard(name: "Popups", bundle: nil)
+//        let timePopup = storyboard.instantiateViewController(withIdentifier: "timePopupViewController") as! TimePopupViewController
+//        self.present(timePopup, animated: true)
+        
+
+        
+        let imagePopup = self.storyboard?.instantiateViewController(withIdentifier: "viewImagesViewController") as! ViewImagesViewController
+        self.present(imagePopup, animated: true)
     }
     
     @IBAction func Action_Button_SelectDate(_ sender: UIButton) {

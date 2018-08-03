@@ -12,7 +12,7 @@ class ViewImagesViewController: UIViewController, UIPageViewControllerDataSource
 
     var pageViewController :UIPageViewController?
     
-    let contentImages = [
+    let contentImages: UIImage = [
         "CreoleCrab",
         "BaconCheese",
         "CaramelizedOnion",
@@ -123,6 +123,14 @@ class ViewImagesViewController: UIViewController, UIPageViewControllerDataSource
             
         }
         return nil
+    }
+    
+    @IBAction func btnExit(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
+    
+    override var prefersStatusBarHidden: Bool{
+        return true
     }
 
 }
