@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class AppSettings{
-    static let tintColor: UIColor  = UIColor(red:255/255, green: 0/255,  blue: 0/255,  alpha: 1.0)
+    static let appColor: UIColor  = UIColor.red
     static let lightColor: UIColor = UIColor(red:244/255, green: 67/255, blue: 54/255, alpha: 1.0)
     static let darkColor: UIColor  = UIColor(red:183/255, green: 28/255, blue: 28/255, alpha: 1.0)
     

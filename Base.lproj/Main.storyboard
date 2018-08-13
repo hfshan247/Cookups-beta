@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -1429,6 +1428,7 @@
                                                 <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="UZ4-Hj-YeP">
                                                     <rect key="frame" x="265" y="7" width="94" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" red="1" green="0.1423805293" blue="0.15375432950000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <connections>
                                                         <action selector="UI_StepperForPortions:" destination="Y7x-Ny-xfz" eventType="valueChanged" id="kzj-Pv-hVf"/>
                                                     </connections>
@@ -1504,6 +1504,10 @@
                                                         <segment title="Delivery"/>
                                                         <segment title="Pick-up"/>
                                                     </segments>
+                                                    <color key="tintColor" red="1" green="0.1423805293" blue="0.15375432950000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <connections>
+                                                        <action selector="sgmntDeliveryOptions:" destination="Y7x-Ny-xfz" eventType="valueChanged" id="Ez3-SL-zge"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -1688,6 +1692,9 @@
                                                     <state key="normal" title="Mon, July 23">
                                                         <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="Action_Button_SelectDeliveryDate:" destination="Y7x-Ny-xfz" eventType="touchUpInside" id="1os-RH-5xb"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -1713,6 +1720,9 @@
                                                     <state key="normal" title="12:00 AM">
                                                         <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="Action_Button_SelectDeliveryTime:" destination="Y7x-Ny-xfz" eventType="touchUpInside" id="evO-oX-Skh"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -1832,6 +1842,8 @@
                         <outlet property="UI_StepperPortions" destination="UZ4-Hj-YeP" id="Pwy-Cy-3VK"/>
                         <outlet property="btnLblDeliveryDate" destination="uTV-gF-1SB" id="U0v-6Q-aHr"/>
                         <outlet property="btnLblDeliveryTime" destination="HSD-IJ-kiS" id="QCe-Ze-wzE"/>
+                        <outlet property="btnLblPickupDate" destination="TXt-HP-jeJ" id="OL5-1O-b9M"/>
+                        <outlet property="btnLblPickupTime" destination="2CJ-0R-psC" id="3YB-ec-9Ly"/>
                         <outlet property="lblPortions" destination="TSB-2F-FOM" id="rWh-2u-TkE"/>
                         <segue destination="gqj-Kk-bi4" kind="show" identifier="segue_address" id="5pC-Zh-MMV"/>
                     </connections>
@@ -1982,7 +1994,6 @@
         <!--View Images View Controller-->
         <scene sceneID="ctp-IG-bnv">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aKp-kj-HjE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="viewImagesViewController" modalPresentationStyle="overCurrentContext" id="tPC-Aj-CW4" customClass="ViewImagesViewController" customModule="Cookups" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nys-QX-bcG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -2004,6 +2015,7 @@
                         <viewLayoutGuide key="safeArea" id="h8k-oW-1NN"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aKp-kj-HjE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4095" y="-2041"/>
         </scene>
@@ -2284,15 +2296,14 @@
         <!--Page View Controller-->
         <scene sceneID="Lv4-AI-D9X">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Yj1-MI-OqK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <pageViewController storyboardIdentifier="viewImagesPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="RwC-ds-TDU" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yj1-MI-OqK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4743" y="-2041"/>
         </scene>
         <!--View Images In View Controller-->
         <scene sceneID="YoT-l6-eWa">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eUu-jv-rvI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="viewImagesInViewController" id="RuA-fq-G9U" customClass="ViewImagesInViewController" customModule="Cookups" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Wv-MN-3o1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -2322,6 +2333,7 @@
                         <outlet property="UI_ContentImageView" destination="ga8-mC-2fd" id="Atz-Qd-ATL"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eUu-jv-rvI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5405.6000000000004" y="-2041.529235382309"/>
         </scene>
@@ -2497,6 +2509,81 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0bD-oo-t2i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8973" y="-1148"/>
+        </scene>
+        <!--Order Success-->
+        <scene sceneID="jKZ-i3-OVm">
+            <objects>
+                <viewController storyboardIdentifier="successOrderViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jvi-p2-WOo" customClass="SuccessOrderViewController" customModule="Cookups" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZX6-hm-yk9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ITY-Cj-jzS">
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xlh-el-GjV">
+                                        <rect key="frame" x="8" y="9" width="359" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.22493194599999999" blue="0.25302485749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="UI_Button_ConfirmPlaceOrger:" destination="W8R-Lu-mni" eventType="touchUpInside" id="PCo-29-AkO"/>
+                                            <action selector="btnDone:" destination="jvi-p2-WOo" eventType="touchUpInside" id="C7r-x8-3gY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Beef Shami Kabab " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3e-As-cX7">
+                                <rect key="frame" x="0.0" y="20" width="375" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Congratulations" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Op-mO-BHf">
+                                <rect key="frame" x="16" y="357" width="343" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Order #22842 has been placed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCv-Ea-unF">
+                                <rect key="frame" x="16" y="402" width="343" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87G-M3-HJk">
+                                <rect key="frame" x="0.0" y="64" width="375" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pan_green" translatesAutoresizingMaskIntoConstraints="NO" id="oJF-xd-Dhe">
+                                <rect key="frame" x="162" y="299" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="i5C-85-RLK"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Order Success" id="Z7s-Ui-rR4"/>
+                    <connections>
+                        <outlet property="lblOrderDescription" destination="WCv-Ea-unF" id="Ytb-W7-ebN"/>
+                        <outlet property="lblProductTitle" destination="87G-M3-HJk" id="AFm-Hq-yyd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bP8-sh-VQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10655.200000000001" y="-1349.7751124437782"/>
         </scene>
         <!--Place Order-->
         <scene sceneID="Bvl-bN-X2o">
@@ -2826,6 +2913,24 @@
             </objects>
             <point key="canvasLocation" x="2129" y="-674"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0GZ-rd-nOy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="I7f-ue-Ilm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Fdp-CW-YrC">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jvi-p2-WOo" kind="relationship" relationship="rootViewController" id="aGI-tu-jWV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bOX-1V-3wu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9716" y="-1349.7751124437782"/>
+        </scene>
     </scenes>
     <resources>
         <image name="BaconCheese" width="616" height="462"/>
@@ -2838,6 +2943,7 @@
         <image name="drink" width="50" height="50"/>
         <image name="grid" width="25" height="25"/>
         <image name="heart_empty" width="50" height="50"/>
+        <image name="pan_green" width="50" height="50"/>
         <image name="pie_chart" width="50" height="50"/>
         <image name="profile" width="442" height="438"/>
         <image name="search" width="25" height="25"/>

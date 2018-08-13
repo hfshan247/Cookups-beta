@@ -24,6 +24,7 @@
 		760960BC21045BD5002EDC00 /* FirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 760960BA21045BD5002EDC00 /* FirstTableViewCell.xib */; };
 		760960BF21045D7B002EDC00 /* SecondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760960BD21045D7B002EDC00 /* SecondTableViewCell.swift */; };
 		760960C021045D7B002EDC00 /* SecondTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 760960BE21045D7B002EDC00 /* SecondTableViewCell.xib */; };
+		760AB5932121B4E700EC60FC /* SuccessOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760AB5922121B4E700EC60FC /* SuccessOrderViewController.swift */; };
 		760F73492103C33200983C7B /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760F73482103C33200983C7B /* TestViewController.swift */; };
 		760F734D2103FE9500983C7B /* OrderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760F734C2103FE9500983C7B /* OrderUIView.swift */; };
 		760F734F21040EC600983C7B /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760F734E21040EC600983C7B /* DetailsViewController.swift */; };
@@ -36,6 +37,9 @@
 		761022122110896A00A14BD8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761022112110896A00A14BD8 /* User.swift */; };
 		7610221421108ECE00A14BD8 /* UsersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7610221321108ECE00A14BD8 /* UsersController.swift */; };
 		761022162110910D00A14BD8 /* UserServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761022152110910D00A14BD8 /* UserServer.swift */; };
+		7612A2D421184BCC008B638C /* CookupsNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7612A2D321184BCC008B638C /* CookupsNavigationBar.swift */; };
+		7612A2D621187800008B638C /* OrdersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7612A2D521187800008B638C /* OrdersController.swift */; };
+		7612A2D82118785D008B638C /* OrdersServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7612A2D72118785D008B638C /* OrdersServer.swift */; };
 		761EC69821066842008431B6 /* AddressFormViewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761EC69721066842008431B6 /* AddressFormViewControllerViewController.swift */; };
 		761EC69A21068148008431B6 /* PlaceOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761EC69921068148008431B6 /* PlaceOrderViewController.swift */; };
 		761EC69C21068D45008431B6 /* MyOrderDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761EC69B21068D45008431B6 /* MyOrderDetailsTableViewController.swift */; };
@@ -64,6 +68,7 @@
 		76604EBD21132113000D9B41 /* DatePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76604EBC21132113000D9B41 /* DatePopupViewController.swift */; };
 		7683B4BD210B058D00F29111 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683B4BC210B058D00F29111 /* Product.swift */; };
 		7683B4C0210B078E00F29111 /* ProductsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683B4BF210B078E00F29111 /* ProductsController.swift */; };
+		76E5CD6321196B9B00C52EF8 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E5CD6221196B9B00C52EF8 /* LaunchScreenViewController.swift */; };
 		76EC15BA210F215900624809 /* ProductServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EC15B9210F215900624809 /* ProductServer.swift */; };
 		76FCB637210B32D500404932 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCB636210B32D500404932 /* Filter.swift */; };
 		76FCB639210B342E00404932 /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FCB638210B342E00404932 /* FilterController.swift */; };
@@ -115,6 +120,7 @@
 		760960BA21045BD5002EDC00 /* FirstTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstTableViewCell.xib; sourceTree = "<group>"; };
 		760960BD21045D7B002EDC00 /* SecondTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTableViewCell.swift; sourceTree = "<group>"; };
 		760960BE21045D7B002EDC00 /* SecondTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondTableViewCell.xib; sourceTree = "<group>"; };
+		760AB5922121B4E700EC60FC /* SuccessOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessOrderViewController.swift; sourceTree = "<group>"; };
 		760F73482103C33200983C7B /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		760F734C2103FE9500983C7B /* OrderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderUIView.swift; sourceTree = "<group>"; };
 		760F734E21040EC600983C7B /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +133,9 @@
 		761022112110896A00A14BD8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7610221321108ECE00A14BD8 /* UsersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersController.swift; sourceTree = "<group>"; };
 		761022152110910D00A14BD8 /* UserServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServer.swift; sourceTree = "<group>"; };
+		7612A2D321184BCC008B638C /* CookupsNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookupsNavigationBar.swift; sourceTree = "<group>"; };
+		7612A2D521187800008B638C /* OrdersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersController.swift; sourceTree = "<group>"; };
+		7612A2D72118785D008B638C /* OrdersServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersServer.swift; sourceTree = "<group>"; };
 		761EC69721066842008431B6 /* AddressFormViewControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressFormViewControllerViewController.swift; sourceTree = "<group>"; };
 		761EC69921068148008431B6 /* PlaceOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceOrderViewController.swift; sourceTree = "<group>"; };
 		761EC69B21068D45008431B6 /* MyOrderDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderDetailsTableViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +164,7 @@
 		76604EBC21132113000D9B41 /* DatePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePopupViewController.swift; sourceTree = "<group>"; };
 		7683B4BC210B058D00F29111 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		7683B4BF210B078E00F29111 /* ProductsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsController.swift; sourceTree = "<group>"; };
+		76E5CD6221196B9B00C52EF8 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		76EC15B9210F215900624809 /* ProductServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductServer.swift; sourceTree = "<group>"; };
 		76FCB636210B32D500404932 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		76FCB638210B342E00404932 /* FilterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterController.swift; sourceTree = "<group>"; };
@@ -205,8 +215,8 @@
 		76045212210713C800FBFE7A /* Notofications */ = {
 			isa = PBXGroup;
 			children = (
-				76045210210712AF00FBFE7A /* NotificationsTableViewCell.swift */,
 				7604520E210711A800FBFE7A /* FourthViewController.swift */,
+				76045210210712AF00FBFE7A /* NotificationsTableViewCell.swift */,
 			);
 			path = Notofications;
 			sourceTree = "<group>";
@@ -337,6 +347,7 @@
 				7606505A2105C49B00CA9B03 /* PlaceOrderFillTableViewController.swift */,
 				7606505C2105C61200CA9B03 /* AddressViewController.swift */,
 				761EC69721066842008431B6 /* AddressFormViewControllerViewController.swift */,
+				760AB5922121B4E700EC60FC /* SuccessOrderViewController.swift */,
 			);
 			path = Order;
 			sourceTree = "<group>";
@@ -414,6 +425,7 @@
 				7683B4BF210B078E00F29111 /* ProductsController.swift */,
 				76FCB638210B342E00404932 /* FilterController.swift */,
 				7610221321108ECE00A14BD8 /* UsersController.swift */,
+				7612A2D521187800008B638C /* OrdersController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -424,6 +436,7 @@
 				76FCB63B210B3F6F00404932 /* FilterServer.swift */,
 				76EC15B9210F215900624809 /* ProductServer.swift */,
 				761022152110910D00A14BD8 /* UserServer.swift */,
+				7612A2D72118785D008B638C /* OrdersServer.swift */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -432,6 +445,7 @@
 			isa = PBXGroup;
 			children = (
 				76FCB63D210B425500404932 /* AppSettings.swift */,
+				7612A2D321184BCC008B638C /* CookupsNavigationBar.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -443,6 +457,7 @@
 				A3AE139B210068E8003071E9 /* Assets.xcassets */,
 				A3AE1392210068E7003071E9 /* AppDelegate.swift */,
 				A3AE139D210068E8003071E9 /* LaunchScreen.storyboard */,
+				76E5CD6221196B9B00C52EF8 /* LaunchScreenViewController.swift */,
 				7610220F211055DF00A14BD8 /* Backup.swift */,
 				A3AE1391210068E7003071E9 /* Cookups */,
 				A3AE13A8210068E8003071E9 /* CookupsTests */,
@@ -665,6 +680,7 @@
 				761EC69E21068EA8008431B6 /* MyOrderDetailsViewController.swift in Sources */,
 				761022162110910D00A14BD8 /* UserServer.swift in Sources */,
 				761EC69C21068D45008431B6 /* MyOrderDetailsTableViewController.swift in Sources */,
+				760AB5932121B4E700EC60FC /* SuccessOrderViewController.swift in Sources */,
 				761022122110896A00A14BD8 /* User.swift in Sources */,
 				76020B312102B95C0016B508 /* ItemDetailsViewController.swift in Sources */,
 				7683B4BD210B058D00F29111 /* Product.swift in Sources */,
@@ -672,6 +688,7 @@
 				76FCB63C210B3F6F00404932 /* FilterServer.swift in Sources */,
 				76604EBD21132113000D9B41 /* DatePopupViewController.swift in Sources */,
 				7604520F210711A800FBFE7A /* FourthViewController.swift in Sources */,
+				76E5CD6321196B9B00C52EF8 /* LaunchScreenViewController.swift in Sources */,
 				76FCB637210B32D500404932 /* Filter.swift in Sources */,
 				760749C72103550F0015240A /* TempTableViewCell.swift in Sources */,
 				7610220E2110368A00A14BD8 /* ThirdTableViewCell.swift in Sources */,
@@ -690,10 +707,12 @@
 				760F734D2103FE9500983C7B /* OrderUIView.swift in Sources */,
 				760F735121041CC000983C7B /* ImageViewController.swift in Sources */,
 				7610220C211025B300A14BD8 /* RuntimeApp.swift in Sources */,
+				7612A2D82118785D008B638C /* OrdersServer.swift in Sources */,
 				76020B2F2102A12C0016B508 /* ThirdViewController.swift in Sources */,
 				760F734F21040EC600983C7B /* DetailsViewController.swift in Sources */,
 				76FCB639210B342E00404932 /* FilterController.swift in Sources */,
 				764481BB2111C1AA005A6243 /* PaymentOption.swift in Sources */,
+				7612A2D621187800008B638C /* OrdersController.swift in Sources */,
 				761EC6A62106BAA0008431B6 /* ViewEditUITableViewCell.swift in Sources */,
 				764481BF2111C8AA005A6243 /* OrderLife.swift in Sources */,
 				764481C12111D7C9005A6243 /* OrderController.swift in Sources */,
@@ -701,6 +720,7 @@
 				761EC6AA2106BEB5008431B6 /* FavoritesViewController.swift in Sources */,
 				764481B32111BD38005A6243 /* DeliveryOption.swift in Sources */,
 				76020B2B21025ED90016B508 /* ItemsCollectionViewCell.swift in Sources */,
+				7612A2D421184BCC008B638C /* CookupsNavigationBar.swift in Sources */,
 				761EC6AE2106BEE5008431B6 /* HelpSupportViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -867,10 +887,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3R5CA877VS;
 				INFOPLIST_FILE = Cookups/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = NUST.Cookups;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -883,10 +904,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3R5CA877VS;
 				INFOPLIST_FILE = Cookups/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = NUST.Cookups;
 				PRODUCT_NAME = "$(TARGET_NAME)";

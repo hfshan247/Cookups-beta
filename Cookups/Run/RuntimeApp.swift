@@ -14,4 +14,9 @@ class RuntimeApp{
     static var product: Product = Product()
     static var placeOrder: Order = Order()
     
+    static func startApp(){
+    // Initialize orders:
+    OrdersController.initializeOrders()
+    }
+    
 }

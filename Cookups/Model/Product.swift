@@ -76,4 +76,6 @@ struct Product{
         self.maxPortions = maxPortions
         //self.user        = user
     }
+    
+    
 }

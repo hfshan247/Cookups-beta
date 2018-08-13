@@ -36,7 +36,6 @@ class DatePopupViewController: UIViewController {
 //        view.addGestureRecognizer(tapGestureRecognizer)
         UI_DatePicker.datePickerMode = .date
         
-        
     }
 
     func outsideViewTapped(recognizer: UITapGestureRecognizer){

@@ -17,56 +17,24 @@ class ItemsViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     // Green Color: 27ae60
     
-    let burgerNames: [UIImage] = [
-        UIImage(named:"CheeseBurger")!,
-        UIImage(named:"BaconCheese")!,
-        UIImage(named:"CaramelizedOnion")!,
-        UIImage(named:"JuicyLucy")!,
-        UIImage(named:"EnglishCheddar")!,
-        UIImage(named:"HolsinBurger")!,
-        UIImage(named:"ChipotleCorn")!,
-        UIImage(named:"ThaiPork")!,
-        UIImage(named:"CreoleCrab")!,
-        UIImage(named:"MiddleEastern")!,
-        UIImage(named:"Saltimbocca")!,
-    ]
-    
-    let burgerTitles = [
-        "Cheese Burger Burger",
-        "Bacon Cheese Burger",
-        "Caramelized Onion Burger",
-        "Juicy Lucy Burger",
-        "English Cheddar Burger",
-        "Holsin Burger Burger",
-        "Chipotle Corn Burger",
-        "Thai Pork Burger",
-        "Creole Crab Burger",
-        "Middle Eastern Burger",
-        "Saltimbocca Burger"
-    ]
-    
-    
+
         
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Setting up the Navigation Bar Header Title
-        navigationItem.title = selectedFilter.title
-        navigationItem.titleView?.tintColor = AppSettings.darkColor
         
         
-        // Do any additional setup after loading the view.
         
-        let myRedColor = UIColor(
-            red:1.0,
-            green:0.0,
-            blue:0.0,
-            alpha:1.0)
+        // UINavigationBar.appearance().tintColor = UIColor.white
+        // Styling Navigation
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.barTintColor = AppSettings.appColor
+        self.navigationController?.navigationBar.titleTextAttributes =  [NSAttributedStringKey.foregroundColor : UIColor.white]
+        UIApplication.shared.statusBarview?.backgroundColor = AppSettings.appColor
+        UIApplication.shared.statusBarStyle = .lightContent
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
         
-        //
-        self.navigationController?.navigationBar.tintColor = myRedColor
-        // Showing tabbar
-        self.tabBarController?.tabBar.isHidden = false
+        // Defa
+      
         
         // Settingup Data in Collection View
         UI_ItemsCollectionView.dataSource = self
@@ -74,9 +42,9 @@ class ItemsViewController: UIViewController, UICollectionViewDelegate, UICollect
         productsArray = ProductsController.getProducts(filter: selectedFilter)
         // productsArray = getFilteredProducts(filter: selectedFilter, products: ProductsController.getProducts())
         //productsArray = ProductsController.getProducts()
-        print(selectedFilter.title!)
-        print(productsArray.count)
         
+        // Settingup the title
+        self.navigationItem.title = selectedFilter.title
     }
 
     override func didReceiveMemoryWarning() {

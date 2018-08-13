@@ -25,21 +25,7 @@ class BackupViewController: UIViewController, UITableViewDelegate, UITableViewDa
     private let Headercut : CGFloat = 0
     
     
-    
-    
-    let burgerTitles = [
-        "Cheese Burger Burger",
-        "Bacon Cheese Burger",
-        "Caramelized Onion Burger",
-        "Juicy Lucy Burger",
-        "English Cheddar Burger",
-        "Holsin Burger Burger",
-        "Chipotle Corn Burger",
-        "Thai Pork Burger",
-        "Creole Crab Burger",
-        "Middle Eastern Burger",
-        "Saltimbocca Burger",
-    ]
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,6 +66,15 @@ class BackupViewController: UIViewController, UITableViewDelegate, UITableViewDa
         UI_LabelPrice.text = "Rs. " +  String(describing: product.price!)
         UI_ImageLiked.image = product.liked
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        print("Disappear the backup view controller")
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.backgroundColor = AppSettings.appColor
+        UIApplication.shared.statusBarview?.backgroundColor = AppSettings.appColor
+        UIApplication.shared.statusBarStyle = .lightContent
+    }
+    
     
     func UpdateView(){
         UI_TableView.backgroundColor = UIColor.white
@@ -128,15 +123,20 @@ class BackupViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if offset > -0.5 {
             UIView.animate(withDuration: 0.2, animations: {
                 offset = 1
-                let color = UIColor.init(red: 1, green: 1, blue: 1, alpha: offset)
-                let navigationcolor = UIColor.init(hue: 0, saturation: offset, brightness: 1, alpha: 1)
+//                let color = UIColor.init(red: 1, green: 1, blue: 1, alpha: offset)
+//                let navigationcolor = UIColor.init(hue: 0, saturation: offset, brightness: 1, alpha: 1)
+//                
+//                self.navigationController?.navigationBar.tintColor = navigationcolor
+//                self.navigationController?.navigationBar.backgroundColor = color
+//                UIApplication.shared.statusBarview?.backgroundColor = color
+//                
+//                self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: navigationcolor]
+//                self.navigationController?.navigationBar.barStyle = .default
                 
-                self.navigationController?.navigationBar.tintColor = navigationcolor
-                self.navigationController?.navigationBar.backgroundColor = color
-                UIApplication.shared.statusBarview?.backgroundColor = color
-                
-                self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: navigationcolor]
-                self.navigationController?.navigationBar.barStyle = .default
+                self.navigationController?.navigationBar.tintColor = UIColor.white
+                self.navigationController?.navigationBar.backgroundColor = AppSettings.appColor
+                UIApplication.shared.statusBarview?.backgroundColor = AppSettings.appColor
+                UIApplication.shared.statusBarStyle = .lightContent
                 
             })
         }
@@ -253,8 +253,10 @@ class BackupViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func UI_ButtonOrderNow(_ sender: UIButton) {
         let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let DesVC = mainStoryboard.instantiateViewController(withIdentifier: "placeOrderViewController") as! PlaceOrderViewController
-        
-        RuntimeApp.product = product
+//        RuntimeApp.product = Product()
+//        RuntimeApp.product = product
+//        
+//        RuntimeApp.placeOrder = Order()
         
         self.navigationController?.pushViewController(DesVC, animated: true)
     }

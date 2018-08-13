@@ -721,6 +721,18 @@ class ProductsController{
         return temp_products
     }
     
+    static func getProduct(productId: Int) -> Product{
+        var temp_product: Product = Product()
+        
+        for p in products{
+            if(p.id == productId){
+                return p
+            }
+        }
+        
+        return temp_product
+    }
+    
     static func getDataFromServer(){
         // Implementation Here
         

@@ -10,12 +10,15 @@ import UIKit
 
 class PlaceOrderFillTableViewController: UITableViewController {
     
+    var dateButton = 0
+    var timeButton = 0
+    
     var datePicker: UIDatePicker!
     
     var count: Int? = 6;
     
     var product: Product = Product()
-    var order: Order = Order()
+    //var order: Order = Order()
     
     @IBOutlet weak var UI_LabelTitle: UILabel!
     @IBOutlet weak var lblPortions: UILabel!
@@ -27,12 +30,30 @@ class PlaceOrderFillTableViewController: UITableViewController {
     @IBOutlet weak var UI_LabelDeliveryTime: UILabel!
     @IBOutlet weak var UI_LabelPaymentType: UILabel!
     
-     @IBOutlet weak var btnLblDeliveryDate: UIButton!
+    @IBOutlet weak var btnLblDeliveryDate: UIButton!
     @IBOutlet weak var btnLblDeliveryTime: UIButton!
-   
+    
+    @IBOutlet weak var btnLblPickupDate: UIButton!
+    @IBOutlet weak var btnLblPickupTime: UIButton!
     
     @IBOutlet weak var UI_StepperPortions: UIStepper!
     
+    @IBAction func sgmntDeliveryOptions(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            RuntimeApp.placeOrder.deliveryOption = DeliveryOption.Delivery
+            print("Segment 1 Selected")
+    
+            break
+        case 1:
+            RuntimeApp.placeOrder.deliveryOption = DeliveryOption.PickUp
+            print("Segment 2 Selected")
+            break
+        default:
+            print("Invalid Segment Selected")
+            break
+        }
+    }
     
     
     
@@ -40,6 +61,7 @@ class PlaceOrderFillTableViewController: UITableViewController {
 //    @IBOutlet weak var UI_Button_SelectTime: UIButton!
     
     @IBAction func Action_Button_SelectDate(_ sender: UIButton) {
+        dateButton = 1
         let storyboard = UIStoryboard(name: "Popups", bundle: nil)
         let datePopup = storyboard.instantiateViewController(withIdentifier: "datePopupViewController") as! DatePopupViewController
         datePopup.delegateDate = self
@@ -47,7 +69,7 @@ class PlaceOrderFillTableViewController: UITableViewController {
     }
     
     @IBAction func Action_Button_SelectTime(_ sender: UIButton) {
-
+        timeButton = 1
         let storyboard = UIStoryboard(name: "Popups", bundle: nil)
         let timePopup = storyboard.instantiateViewController(withIdentifier: "timePopupViewController") as! TimePopupViewController
         timePopup.delegateTime = self
@@ -58,17 +80,33 @@ class PlaceOrderFillTableViewController: UITableViewController {
     }
     
     
+    @IBAction func Action_Button_SelectDeliveryDate(_ sender: UIButton) {
+         dateButton = 2
+        let storyboard = UIStoryboard(name: "Popups", bundle: nil)
+        let datePopup = storyboard.instantiateViewController(withIdentifier: "datePopupViewController") as! DatePopupViewController
+        datePopup.delegateDate = self
+        self.present(datePopup, animated: true)
+    }
+    
+    @IBAction func Action_Button_SelectDeliveryTime(_ sender: UIButton) {
+        timeButton = 2
+        let storyboard = UIStoryboard(name: "Popups", bundle: nil)
+        let timePopup = storyboard.instantiateViewController(withIdentifier: "timePopupViewController") as! TimePopupViewController
+        timePopup.delegateTime = self
+        self.present(timePopup, animated: true)
+    }
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
         
         // Settingup data
         product = RuntimeApp.product
-        order = RuntimeApp.placeOrder
+        RuntimeApp.placeOrder = RuntimeApp.placeOrder
         
+        RuntimeApp.placeOrder.productId = product.id
         
         // Designing
         customizeViwe()
@@ -130,11 +168,12 @@ class PlaceOrderFillTableViewController: UITableViewController {
     
     @IBAction func UI_StepperForPortions(_ sender: UIStepper) {
         
-        order.portions = Int(sender.value)
-        lblPortions.text = String(describing: order.portions!)
+        RuntimeApp.placeOrder.portions = Int(sender.value)
+        lblPortions.text = String(describing: RuntimeApp.placeOrder.portions!)
         
-        order.total = order.portions! * product.price!
-        UI_LabelTotal.text = "Rs. " +  String(describing: order.total!)
+        //Ordr Portions
+        RuntimeApp.placeOrder.total = RuntimeApp.placeOrder.portions! * product.price!
+        UI_LabelTotal.text = "Rs. " +  String(describing: RuntimeApp.placeOrder.total!)
         
         
     }
@@ -143,10 +182,10 @@ class PlaceOrderFillTableViewController: UITableViewController {
         // Customize view:
         
         //order.portions = Int(sender.value)
-        lblPortions.text = String(describing: order.portions!)
+        lblPortions.text = String(describing: RuntimeApp.placeOrder.portions!)
         
-        order.total = order.portions! * product.price!
-        UI_LabelTotal.text = "Rs. " +  String(describing: order.total!)
+        RuntimeApp.placeOrder.total = RuntimeApp.placeOrder.portions! * product.price!
+        UI_LabelTotal.text = "Rs. " +  String(describing: RuntimeApp.placeOrder.total!)
         
         UI_LabelTitle.text = product.title
 //        UI_LabelPortions.text = String(describing: order.portions!)
@@ -164,14 +203,53 @@ class PlaceOrderFillTableViewController: UITableViewController {
 
 extension PlaceOrderFillTableViewController: TimePopupDelegate{
     func popupTimeSelected(time: String) {
-        btnLblDeliveryTime.setTitle(time, for: .normal)
+        switch timeButton {
+        case 1:
+            btnLblDeliveryTime.setTitle(time, for: .normal)
+            RuntimeApp.placeOrder.DeliveryTime = time
+            timeButton = 0
+            break
+            
+        case 2:
+            btnLblPickupTime.setTitle(time, for: .normal)
+            RuntimeApp.placeOrder.PickupTime = time
+            timeButton = 0
+            break
+        default:
+            print("Invalid time button")
+            break
+        }
+        
+        
     }
+//    func popupDeliveryTimeSelected(time: String){
+//        btnLblDeliveryTime.setTitle(time, for: .normal)
+//    }
 }
 
 extension PlaceOrderFillTableViewController: DatePopupDelegate{
     func popupDateSelected(date: String) {
-        btnLblDeliveryDate.setTitle(date, for: .normal)
+        
+        switch dateButton {
+        case 1:
+            btnLblDeliveryDate.setTitle(date, for: .normal)
+            RuntimeApp.placeOrder.DeliveryDate = date
+            dateButton = 0
+            break
+        case 2:
+            btnLblPickupDate.setTitle(date, for: .normal)
+            RuntimeApp.placeOrder.PickupDate = date
+            dateButton = 0
+        default:
+            print("Invalid date button")
+            break
+        }
+        
+      //  btnLblDeliveryDate.setTitle(date, for: .normal)
+        
     }
-    
-    
+//    func popupDeliveryDateSelected(date:String){
+//        btnLblDeliveryDate.setTitle(date, for: .normal)
+//    }
 }
+

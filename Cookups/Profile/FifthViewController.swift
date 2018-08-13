@@ -74,6 +74,12 @@ class FifthViewController: UIViewController, UITableViewDataSource, UITableViewD
         navigationItem.titleView = titleImageView
         navigationItem.prompt = "Muhammad Hussain Farooq"
         
+        // Styling Navigation
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.backgroundColor = AppSettings.appColor
+        UIApplication.shared.statusBarview?.backgroundColor = AppSettings.appColor
+        UIApplication.shared.statusBarStyle = .lightContent
+        
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

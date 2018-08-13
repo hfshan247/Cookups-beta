@@ -10,4 +10,6 @@ import Foundation
 
 protocol TimePopupDelegate{
     func popupTimeSelected(time: String)
+    
+//    func popupDeliveryTimeSelected(time: String)
 }

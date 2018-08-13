@@ -10,6 +10,8 @@ import UIKit
 
 class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    var myorders: [Order] = [Order]()
+    
     @IBOutlet weak var UI_TableViewMyOrders: UITableView!
     var revert = true
     
@@ -48,8 +50,15 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         UI_TableViewMyOrders.delegate = self
         UI_TableViewMyOrders.dataSource = self
         
-        // Hiding Tabbar
-        // self.tabBarController?.tabBar.isHidden = false
+        // Styling Navigation
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.barTintColor = AppSettings.appColor
+        self.navigationController?.navigationBar.titleTextAttributes =  [NSAttributedStringKey.foregroundColor : UIColor.white]
+        UIApplication.shared.statusBarview?.backgroundColor = AppSettings.appColor
+        UIApplication.shared.statusBarStyle = .lightContent
+        
+        //Getting Data:
+        myorders = OrdersController.getOrders()
         
     }
 
@@ -59,17 +68,24 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return burgerTitles.count
+        return myorders.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let tableCell = tableView.dequeueReusableCell(withIdentifier: "myOrdersTableViewCell") as? MyOrdersTableViewCell
         
-        tableCell?.UI_LabelTitle?.text = burgerTitles[indexPath.row]
-        tableCell?.UI_LabelSeller?.text = providers[indexPath.row]
-        tableCell?.UI_LabelDate?.text = "Monday, July 23"
-        tableCell?.UI_LabelCost?.text = "Rs. 500"
+        tableCell?.UI_LabelTitle?.text = ProductsController.getProduct(productId:(myorders[indexPath.row].productId)!).title!
+        
+        var order = myorders[indexPath.row]
+        var product = ProductsController.getProduct(productId: order.productId!)
+        var user = UsersController.getUser(id: product.userID!)
+        
+        
+        tableCell?.UI_LabelSeller?.text = user.userName
+        tableCell?.UI_LabelDate?.text = order.DeliveryDate
+        tableCell?.UI_LabelCost?.text = String(describing: order.total!)
+        
         if (revert){
             tableCell?.UI_LabelStatus?.text = "Cancelled";  tableCell?.UI_LabelStatus?.backgroundColor = UIColor.red; tableCell?.UI_LabelStatus?.textColor = UIColor.white
             revert = false

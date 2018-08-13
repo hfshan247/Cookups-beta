@@ -37,6 +37,8 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        RuntimeApp.startApp()
+        
         setupNavigationBarItems()
         // Do any additional setup after loading the view, typically from a nib.
         collectionView.dataSource = self
@@ -72,13 +74,19 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         
        
         
-        let titleImageView = UIImageView(image: #imageLiteral(resourceName: "pan_green"))
+        let titleImageView = UIImageView(image: #imageLiteral(resourceName: "pan_white"))
         titleImageView.tintColor = myRedColor
         titleImageView.frame = CGRect(x:0, y:0, width:34, height:34)
         titleImageView.contentMode = .scaleAspectFit
         
         
         navigationItem.titleView = titleImageView
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.backgroundColor = AppSettings.appColor
+        UIApplication.shared.statusBarview?.backgroundColor = AppSettings.appColor
+        UIApplication.shared.statusBarStyle = .lightContent
+
         
     }
 

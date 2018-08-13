@@ -23,6 +23,13 @@ class MyOrderDetailsViewController: UIViewController {
         
         //self.tabBarController?.tabBar.isHidden = true
         
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.barTintColor = AppSettings.appColor
+        self.navigationController?.navigationBar.titleTextAttributes =  [NSAttributedStringKey.foregroundColor : UIColor.white]
+        UIApplication.shared.statusBarview?.backgroundColor = AppSettings.appColor
+        UIApplication.shared.statusBarStyle = .lightContent
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
+        
     }
 
     override func didReceiveMemoryWarning() {

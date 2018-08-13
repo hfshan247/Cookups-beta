@@ -53,6 +53,13 @@ class ThirdViewController: UIViewController, UICollectionViewDataSource, UIColle
         // Do any additional setup after loading the view.
         UI_SearchItemsCollectionView.dataSource = self
         UI_SearchItemsCollectionView.delegate = self
+        
+        // Styling Navigation
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.barTintColor = UIColor.red
+        self.navigationController?.navigationBar.titleTextAttributes =  [NSAttributedStringKey.foregroundColor : UIColor.white]
+        UIApplication.shared.statusBarview?.backgroundColor = UIColor.red
+        UIApplication.shared.statusBarStyle = .lightContent
     }
 
     override func didReceiveMemoryWarning() {

@@ -47,6 +47,13 @@ class FourthViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         UI_TableViewNotifications.delegate = self
         UI_TableViewNotifications.dataSource = self
+        
+        // Styling Navigation
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.backgroundColor = AppSettings.appColor
+        UIApplication.shared.statusBarview?.backgroundColor = AppSettings.appColor
+        UIApplication.shared.statusBarStyle = .lightContent
+        
     }
 
     override func didReceiveMemoryWarning() {

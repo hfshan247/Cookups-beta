@@ -17,14 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().barTintColor = AppSettings.appColor
+        UIApplication.shared.statusBarStyle = .lightContent
+        UIApplication.shared.statusBarview?.backgroundColor = AppSettings.appColor
+    
         // Change Default Tint color
-        let myRedColor = UIColor(
-            red:1.0,
-            green:0.0,
-            blue:0.0,
-            alpha:1.0)
-
-        self.window!.tintColor = myRedColor
+//        let myRedColor = UIColor(
+//            red:1.0,
+//            green:0.0,
+//            blue:0.0,
+//            alpha:1.0)
+//
+        self.window!.tintColor = AppSettings.appColor
         //self.window!.tintColor = UIColor.red
         return true
     }
